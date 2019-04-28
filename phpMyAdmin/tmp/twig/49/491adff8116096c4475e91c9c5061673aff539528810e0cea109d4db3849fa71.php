@@ -55,6 +55,6 @@ if (typeof configScriptLoaded !== \"undefined\" && configInlineParams) loadInlin
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "javascript/display.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/javascript/display.twig");
+        return new Twig_Source("", "javascript/display.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/javascript/display.twig");
     }
 }
