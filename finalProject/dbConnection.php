@@ -1,6 +1,6 @@
 <?php
 
-function getDatabaseConnection($dbname = 'image_grid'){
+function getDatabaseConnection($dbname = 'puppyLuv'){
     // C9 connection string
     $host = 'localhost';
     $username = 'root';
