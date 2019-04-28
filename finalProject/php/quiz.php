@@ -43,7 +43,7 @@
                             <!-- Menu Area -->
                             <div class="collapse navbar-collapse" id="ca-navbar">
                                 <ul class="navbar-nav ml-auto" id="nav">
-                                    <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
                                     <li class="nav-item"><a class="nav-link" href="quiz.php">Quiz</a></li>
                                 </ul>
                                 <div class="sing-up-button d-lg-none">
