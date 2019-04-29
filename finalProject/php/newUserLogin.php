@@ -69,7 +69,7 @@
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
-        <!-- ***** Wellcome Area Start ***** -->
+    <!-- ***** Wellcome Area Start ***** -->
     <section class="wellcome_area clearfix" id="home">
         
         
@@ -109,8 +109,8 @@
                         </form>
                     </div>
                     <div class="signup-image">
-                        <figure><img src="../img/signup-image.jpg" alt="sing up image"></figure>
-                        <a href="#" class="signup-image-link">I am already member</a>
+                        <figure><img src="../img/signUpUser.png" alt="sing up image"></figure>
+                        <a href="login.php" class="signup-image-link">I am already member</a>
                     </div>
                 </div>
             </div>
