@@ -68,6 +68,6 @@ class __TwigTemplate_88d0d54cc2be8544e0285fd597f3258746fe09291d7832a5a28c3a3c4a7
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "display/results/multi_row_operations_form.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/display/results/multi_row_operations_form.twig");
+        return new Twig_Source("", "display/results/multi_row_operations_form.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/display/results/multi_row_operations_form.twig");
     }
 }

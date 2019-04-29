@@ -158,6 +158,6 @@ class __TwigTemplate_cd0f92dc9d4a45621979bf9b5beb556a4a457a3ea58565fc39fa72ce559
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "display/results/options_block.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/display/results/options_block.twig");
+        return new Twig_Source("", "display/results/options_block.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/display/results/options_block.twig");
     }
 }

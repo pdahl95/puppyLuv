@@ -70,6 +70,6 @@ class __TwigTemplate_ebbb76ac48f7143a2240035c81089585a3f83bafb583f7b791b9f382864
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "display/results/additional_fields.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/display/results/additional_fields.twig");
+        return new Twig_Source("", "display/results/additional_fields.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/display/results/additional_fields.twig");
     }
 }

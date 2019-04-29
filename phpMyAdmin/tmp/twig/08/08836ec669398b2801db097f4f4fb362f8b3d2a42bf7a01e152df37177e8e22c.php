@@ -82,6 +82,6 @@ class __TwigTemplate_90ae8db1e98acbd6eee85d738f090cac8e41dd73a4e94eecf2261db568b
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "display/results/show_all_checkbox.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/display/results/show_all_checkbox.twig");
+        return new Twig_Source("", "display/results/show_all_checkbox.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/display/results/show_all_checkbox.twig");
     }
 }

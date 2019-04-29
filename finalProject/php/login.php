@@ -69,7 +69,7 @@
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
-        <!-- ***** Wellcome Area Start ***** -->
+    <!-- ***** Wellcome Area Start ***** -->
     <section class="wellcome_area clearfix" id="home">
         
         

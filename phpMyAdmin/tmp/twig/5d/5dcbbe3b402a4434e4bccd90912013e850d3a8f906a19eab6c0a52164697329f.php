@@ -72,6 +72,6 @@ class __TwigTemplate_56444fe76978bf2f4c7aaf15b9f9a233a2e69486f202f7521fdfd7a5337
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "checkbox.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/checkbox.twig");
+        return new Twig_Source("", "checkbox.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/checkbox.twig");
     }
 }

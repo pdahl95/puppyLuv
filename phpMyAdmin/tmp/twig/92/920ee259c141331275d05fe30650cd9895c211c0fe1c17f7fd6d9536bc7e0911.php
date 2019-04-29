@@ -79,6 +79,6 @@ class __TwigTemplate_69a22393313627d38461970d9be83ab4a8227cf6a1fa96866783a784c09
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "radio_fields.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/radio_fields.twig");
+        return new Twig_Source("", "radio_fields.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/radio_fields.twig");
     }
 }
