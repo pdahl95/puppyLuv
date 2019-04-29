@@ -67,8 +67,13 @@
     <section class="wellcome_areaIMAGEGRID clearfix" id="home">
         
         <!-- ***** Image Grid Start ***** -->
-        <br> <br> <br> 
+        <br>
        <div class="image_grid"> 
+       <div class="div_title_quiz"> 
+           <h2 class="quiz_title">  QUIZ </h2>
+           <h5> Please select 5 of your favorite dogs. </h5>
+       </div>
+       
            <div class="row_img_grid">
             <div class="column"> </div>
             <div class="column"> </div>
@@ -90,7 +95,7 @@
             <div class="column"> </div>
             <div class="column"> </div>
         </div>
-        <div class="row">
+        <div class="row_img_grid">
             <div class="column"> </div>
             <div class="column"> </div>
             <div class="column"> </div>

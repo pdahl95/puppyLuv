@@ -1299,11 +1299,11 @@ p {
 /*IMAGE GRID STYLE*/
 
 .image_grid {
-    /*margin-top: 50px;*/
-    border: 1px solid;
-    /*background: #f8f8f8;*/
-    padding: 120px 0;
-    margin-top: 20px;
+    margin-top: 80px;
+    /*border: 1px solid;*/
+    background: #f8f8f8;
+    padding: 20px 0;
+    /*margin-top: 20px;*/
     /*margin-bottom: 60px;*/
 }
 
@@ -1316,10 +1316,11 @@ p {
 .column {
     float: left;
     width: 33.33%;
-    padding: 10px;
+    padding: 15px;
     height: 300px;
-    border: 1px solid;
+    /*border: 1px solid;*/
 }
+
 .row_img_grid {
     /*border: 1px solid;*/
     width: 80%;
@@ -1327,12 +1328,14 @@ p {
 }
 
 /* Clear floats after the columns */
+
 .row_img_grid:after {
     content: "";
     display: table;
     clear: both;
 }
-.wellcome_areaIMAGEGRID{
+
+.wellcome_areaIMAGEGRID {
     background-image: url(img/bg-img/welcome-bg.png);
     height: 100%;
     position: relative;
@@ -1350,4 +1353,15 @@ p {
     content: '';
     bottom: 0;
     z-index: 2;
+}
+.div_title_quiz{
+    margin-left: 10%;
+    /*border: 1px solid;*/
+}
+.quiz_title {
+    font-size: 100px;
+    color: #6e52e5;
+    font-weight: 700;
+    position: relative;
+    z-index: 3;
 }
