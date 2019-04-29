@@ -69,23 +69,23 @@
         <!-- ***** Image Grid Start ***** -->
         <br> <br> <br> 
        <div class="image_grid"> 
-           <div class="row">
+           <div class="row_img_grid">
             <div class="column"> </div>
             <div class="column"> </div>
             <div class="column"> </div>
 
         </div>
-        <div class="row">
+        <div class="row_img_grid">
             <div class="column"> </div>
             <div class="column"> </div>
             <div class="column"> </div>
         </div>
-        <div class="row">
+        <div class="row_img_grid">
             <div class="column"> </div>
             <div class="column"> </div>
             <div class="column"> </div>
         </div>
-        <div class="row">
+        <div class="row_img_grid">
             <div class="column"> </div>
             <div class="column"> </div>
             <div class="column"> </div>

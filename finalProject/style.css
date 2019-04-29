@@ -1320,14 +1320,14 @@ p {
     height: 300px;
     border: 1px solid;
 }
-.row {
+.row_img_grid {
     /*border: 1px solid;*/
     width: 80%;
     margin: 0 auto;
 }
 
 /* Clear floats after the columns */
-.row:after {
+.row_img_grid:after {
     content: "";
     display: table;
     clear: both;
