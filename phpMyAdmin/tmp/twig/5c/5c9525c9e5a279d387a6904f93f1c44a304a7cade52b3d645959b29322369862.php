@@ -135,6 +135,6 @@ $context["stat_name"], "sort_order" => ((((                // line 18
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "server/databases/table_header.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/server/databases/table_header.twig");
+        return new Twig_Source("", "server/databases/table_header.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/server/databases/table_header.twig");
     }
 }

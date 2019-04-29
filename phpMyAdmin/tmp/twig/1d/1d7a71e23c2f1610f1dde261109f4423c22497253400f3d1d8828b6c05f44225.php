@@ -71,6 +71,6 @@ class __TwigTemplate_e5a12560c5161ed9e202d37c31a479334c30f8d13643868221948bc07a0
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "server/sub_page_header.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/server/sub_page_header.twig");
+        return new Twig_Source("", "server/sub_page_header.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/server/sub_page_header.twig");
     }
 }

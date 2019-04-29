@@ -61,6 +61,6 @@ class __TwigTemplate_2bb2998b8b2e0abdedaf302de1d8b5f68eb5b4d487d90647437f2d035e6
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "database/structure/print_view_data_dictionary_link.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/database/structure/print_view_data_dictionary_link.twig");
+        return new Twig_Source("", "database/structure/print_view_data_dictionary_link.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/database/structure/print_view_data_dictionary_link.twig");
     }
 }

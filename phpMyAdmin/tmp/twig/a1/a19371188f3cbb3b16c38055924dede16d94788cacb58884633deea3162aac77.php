@@ -71,6 +71,6 @@ class __TwigTemplate_b8e70422aba3d10ae5ce2387dd3a3dbfd8d90ac5008522e6f2053734c56
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "select_all.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/select_all.twig");
+        return new Twig_Source("", "select_all.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/select_all.twig");
     }
 }

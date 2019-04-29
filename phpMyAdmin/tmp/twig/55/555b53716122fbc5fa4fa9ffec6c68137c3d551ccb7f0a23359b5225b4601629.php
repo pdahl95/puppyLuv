@@ -78,6 +78,6 @@ class __TwigTemplate_de5ae2909e79491c626613009e1ce4dfb123aaf7b6c5a1a5b733bfd9b1c
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "server/databases/databases_header.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/server/databases/databases_header.twig");
+        return new Twig_Source("", "server/databases/databases_header.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/server/databases/databases_header.twig");
     }
 }

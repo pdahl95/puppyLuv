@@ -37,7 +37,7 @@
                     <div class="menu_area">
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <!-- Logo -->
-                            <img class="navbar-brand" src="img/bg-img/doglogosm.png" alt="">
+                            <img class="navbar-brand" src="../img/bg-img/doglogosm.png" alt="">
                             <a class="navbar-brand" href="#">Puppy Luv</a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                             <!-- Menu Area -->

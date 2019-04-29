@@ -215,6 +215,6 @@ class __TwigTemplate_dea629108cb83d1a3bfb63954ac3b81befdd614970645aceb80df8e83c4
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "server/databases/table_row.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/server/databases/table_row.twig");
+        return new Twig_Source("", "server/databases/table_row.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/server/databases/table_row.twig");
     }
 }
