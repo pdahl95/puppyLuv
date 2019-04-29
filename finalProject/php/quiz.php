@@ -64,7 +64,40 @@
     </header>
     <!-- ***** Header Area End ***** -->
         <!-- ***** Wellcome Area Start ***** -->
-    <section class="wellcome_area clearfix" id="home">
+    <section class="wellcome_areaIMAGEGRID clearfix" id="home">
+        
+        <!-- ***** Image Grid Start ***** -->
+        <br> <br> <br> 
+       <div class="image_grid"> 
+           <div class="row">
+            <div class="column"> </div>
+            <div class="column"> </div>
+            <div class="column"> </div>
+
+        </div>
+        <div class="row">
+            <div class="column"> </div>
+            <div class="column"> </div>
+            <div class="column"> </div>
+        </div>
+        <div class="row">
+            <div class="column"> </div>
+            <div class="column"> </div>
+            <div class="column"> </div>
+        </div>
+        <div class="row">
+            <div class="column"> </div>
+            <div class="column"> </div>
+            <div class="column"> </div>
+        </div>
+        <div class="row">
+            <div class="column"> </div>
+            <div class="column"> </div>
+            <div class="column"> </div>
+        </div>
+       </div>
+       
+       <!-- ***** Image Grid End ***** -->
 
     </section>
     <!-- ***** Wellcome Area End ***** -->
@@ -101,6 +134,8 @@
     <script src="../js/footer-reveal.min.js"></script>
     <!-- Active JS -->
     <script src="../js/active.js"></script>
+    
+    <script type="text/javascript" src="../js/quizFunctions.js"></script>
 </body>
 
 </html>

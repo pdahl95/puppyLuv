@@ -1,6 +1,6 @@
 <?php
 
-function getDatabaseConnection($dbname = 'puppyLuv'){
+function getDatabaseConnection($dbname = 'puppyLyv'){
     // C9 connection string
     $host = 'localhost';
     $username = 'root';
