@@ -101,6 +101,6 @@ class __TwigTemplate_6db84f9b7ea40aa26625c76f3fc6eac7d063046c982051372953d7799b8
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "display/export/hidden_inputs.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/display/export/hidden_inputs.twig");
+        return new Twig_Source("", "display/export/hidden_inputs.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/display/export/hidden_inputs.twig");
     }
 }

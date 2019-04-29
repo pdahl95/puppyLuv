@@ -98,6 +98,6 @@ class __TwigTemplate_51f0927333f90ed002e4fccd5a74f06240875b25c5fe4cc05a186100800
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "display/export/options_output_compression.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/display/export/options_output_compression.twig");
+        return new Twig_Source("", "display/export/options_output_compression.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/display/export/options_output_compression.twig");
     }
 }

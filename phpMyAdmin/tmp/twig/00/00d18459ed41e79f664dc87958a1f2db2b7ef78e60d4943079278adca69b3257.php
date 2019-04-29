@@ -80,6 +80,6 @@ class __TwigTemplate_26a7b96337e6b555fd53c8dde057d95b0bc65f59619f496b9b285f69d49
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "display/export/method.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/display/export/method.twig");
+        return new Twig_Source("", "display/export/method.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/display/export/method.twig");
     }
 }

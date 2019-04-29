@@ -68,6 +68,6 @@ class __TwigTemplate_06516258943e7199ed284a0a39f604be6f600f1fff6e61c262b5eb82420
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "export/alias_item.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/export/alias_item.twig");
+        return new Twig_Source("", "export/alias_item.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/export/alias_item.twig");
     }
 }

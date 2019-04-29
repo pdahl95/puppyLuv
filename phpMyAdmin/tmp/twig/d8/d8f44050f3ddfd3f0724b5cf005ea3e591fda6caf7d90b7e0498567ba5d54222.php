@@ -123,6 +123,6 @@ class __TwigTemplate_090300ce5eed4b82ab99af783b4862749593bafb28825edc00d9b2b6e8d
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "export/alias_add.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/export/alias_add.twig");
+        return new Twig_Source("", "export/alias_add.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/export/alias_add.twig");
     }
 }
