@@ -57,6 +57,6 @@ class __TwigTemplate_bd4bfe42cbe577b273f06fc09c2f60572ff40eeeb9b2df5e60762ff2ebe
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "database/structure/empty_table.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/database/structure/empty_table.twig");
+        return new Twig_Source("", "database/structure/empty_table.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/database/structure/empty_table.twig");
     }
 }

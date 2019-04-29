@@ -82,6 +82,6 @@ class __TwigTemplate_43cc1a297ea25443758695feb125b0c672c3cfbde37254f55b755eb5392
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "server/databases/index.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/server/databases/index.twig");
+        return new Twig_Source("", "server/databases/index.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/server/databases/index.twig");
     }
 }

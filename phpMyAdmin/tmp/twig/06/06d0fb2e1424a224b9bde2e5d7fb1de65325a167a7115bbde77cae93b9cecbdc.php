@@ -139,6 +139,6 @@ class __TwigTemplate_ac7d37b13a6981c4a9c2361d91cd390a20e364e865123443995e2395207
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "server/databases/create.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/server/databases/create.twig");
+        return new Twig_Source("", "server/databases/create.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/server/databases/create.twig");
     }
 }

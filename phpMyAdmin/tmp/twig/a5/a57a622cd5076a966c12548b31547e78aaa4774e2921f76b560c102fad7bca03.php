@@ -571,6 +571,6 @@ class __TwigTemplate_463246a88fc9f620ead44b2490a1324ad720d4ae0a2d7d23f3549592797
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "database/structure/structure_table_row.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/database/structure/structure_table_row.twig");
+        return new Twig_Source("", "database/structure/structure_table_row.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/database/structure/structure_table_row.twig");
     }
 }

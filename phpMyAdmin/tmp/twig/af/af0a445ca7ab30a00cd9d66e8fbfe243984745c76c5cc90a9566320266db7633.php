@@ -280,6 +280,6 @@ class __TwigTemplate_dadcf90d424cf2ecb018d87fe6c9a3db36d38beb839e060f966caf4a1ea
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "database/structure/body_for_table_summary.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/database/structure/body_for_table_summary.twig");
+        return new Twig_Source("", "database/structure/body_for_table_summary.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/database/structure/body_for_table_summary.twig");
     }
 }

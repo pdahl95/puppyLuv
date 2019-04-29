@@ -206,6 +206,6 @@ class __TwigTemplate_a170dbe49537cb5a170b387f30f6b0109e363920cc772afde043350fd66
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "server/databases/databases_footer.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/server/databases/databases_footer.twig");
+        return new Twig_Source("", "server/databases/databases_footer.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/server/databases/databases_footer.twig");
     }
 }

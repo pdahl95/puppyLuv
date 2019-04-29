@@ -54,6 +54,6 @@ class __TwigTemplate_443fcd0d9f8365147326a1e4add7693bd0462515df9bb3405a2fc76626f
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "database/structure/browse_table_label.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/database/structure/browse_table_label.twig");
+        return new Twig_Source("", "database/structure/browse_table_label.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/database/structure/browse_table_label.twig");
     }
 }

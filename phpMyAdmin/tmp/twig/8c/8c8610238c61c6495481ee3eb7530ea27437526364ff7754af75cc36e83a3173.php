@@ -61,6 +61,6 @@ class __TwigTemplate_15300fee0e7e7c6068ec06afd85a5d9c99abd092c9f3851ef50fa915716
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "filter.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/filter.twig");
+        return new Twig_Source("", "filter.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/filter.twig");
     }
 }
