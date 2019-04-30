@@ -39,14 +39,15 @@ $cfg['Servers'][$i]['AllowNoPassword'] = true;
  */
 /**
  * Heroku server
+ * mysql://bd2b19aecfa350:3a05629b@us-cdbr-iron-east-02.cleardb.net/heroku_ceb4dc4fce00730?reconnect=true
  */
 $i++;
 /* Authentication type */
 $cfg['Servers'][$i]['auth_type'] = 'config';
 /* Server parameters */
-$cfg['Servers'][$i]['host'] = 'us-cdbr-iron-east-03.cleardb.net';
-$cfg['Servers'][$i]['user'] = 'ba623385a8ed59';
-$cfg['Servers'][$i]['password'] = '2b44d47e';
+$cfg['Servers'][$i]['host'] = 'us-cdbr-iron-east-02.cleardb.net';
+$cfg['Servers'][$i]['user'] = 'bd2b19aecfa350';
+$cfg['Servers'][$i]['password'] = '3a05629b';
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
 
