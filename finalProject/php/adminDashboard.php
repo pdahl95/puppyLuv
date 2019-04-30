@@ -68,9 +68,10 @@
       padding: 0px 10px;
     }
     .stat_img{
-        width: 450px;
-        height: 350px;
+        width: 300px;
+        height: 250px;
         padding-top: 10px;
+        display: block;
     }
     .logout{
         position: fixed;
@@ -90,6 +91,23 @@
         border-radius: 24px 24px 24px 0px;
         width: 120px;
         background-color:#8b000c;
+    }
+    .text{
+        font-size: 16px;
+        display: inline;
+    }
+    .stats_column {
+      float: left;
+      width: 33.33%;
+      padding: 10px;
+      height: 300px; /* Should be removed. Only for demonstration */
+    }
+    
+    /* Clear floats after the columns */
+    .stats_row:after {
+      content: "";
+      display: table;
+      clear: both;
     }
 
     </style>
@@ -123,7 +141,21 @@
         <div class="main">
             <a name="stats"></a>
             <div class="stats"> Statistics <br> 
-            <img class="stat_img" src="https://www.inogic.com/blog/wp-content/uploads/2016/06/user-adoption-summary.png"></img>
+            <div class="stats_row">
+              <div class="stats_column">
+                <div class="text"> Number of users </div>
+                <img class="stat_img" src="https://www.inogic.com/blog/wp-content/uploads/2016/06/user-adoption-summary.png"></img>
+              </div>
+              <div class="stats_column">
+                <div class="text"> Number of breeds </div>
+              </div>
+              <div class="stats_column">
+                <div class="text"> Average age of users </div>
+              </div>
+            </div>
+            
+            
+            
             
             </div>
             
@@ -146,24 +178,13 @@
        
        <!-- ***** ADMIN BASHBOARD ENDS ***** -->
 
-    <!--</section>-->
     <!-- ***** Wellcome Area End ***** -->
     
     
     <!-- ***** Footer Area Start ***** -->
     <footer class="footer-social-icon text-center section_padding_70 clearfix">
-         <!--footer logo -->
-        <div class="footer-text">
-            <!--<h2>Puppy Luv</h2>-->
-        </div>
-         <!--social icon-->
-        <div class="footer-social-icon">
-            <!--<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>-->
-            <!--<a href="#"><i class="active fa fa-twitter" aria-hidden="true"></i></a>-->
-            <!--<a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>-->
-            <!--<a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>-->
-        </div>
-
+        <div class="footer-text"></div>
+        <div class="footer-social-icon"> </div>
     </footer>
     <!-- ***** Footer Area Start ***** -->
 
