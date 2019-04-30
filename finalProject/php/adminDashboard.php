@@ -19,6 +19,80 @@
 
     <!-- Responsive CSS -->
     <link href="../css/responsive.css" rel="stylesheet">
+    
+    <style type="text/css">
+    .adminTitle {
+        font-size: 22px;
+        color: #6e52e5;
+        font-weight: 700;
+        position: fixed;
+        top:0;
+        left:0;
+        z-index: 3;
+        padding: 4px;
+    }
+    .sidenav {
+        margin-top: 2.6%;
+      height: 100%;
+      width: 200px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #fffafa;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+    
+    .sidenav a {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+    }
+    
+    .sidenav a:hover {
+      color: #d8bfd8;
+    }
+    .dash{
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #6e52e5;
+        display: block;
+    }
+    .main {
+      margin-left: 220px; /* Same as the width of the sidenav */
+      font-size: 28px; /* Increased text to enable scrolling */
+      padding: 0px 10px;
+    }
+    .stat_img{
+        width: 450px;
+        height: 350px;
+        padding-top: 10px;
+    }
+    .logout{
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 24px 24px 24px 0px;
+        width: 120px;
+    }
+    .logout:hover{
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 24px 24px 24px 0px;
+        width: 120px;
+        background-color:#8b000c;
+    }
+
+    </style>
 
 </head>
 
@@ -29,72 +103,65 @@
     </div>
 
     <!-- ***** Header Area Start ***** -->
-    <header class="header_area animated">
+    <header class="">
         <div class="container-fluid">
             <div class="row align-items-center">
-                <!-- Menu Area Start -->
-                <div class="col-12 col-lg-10">
-                    <div class="menu_area">
-                        <nav class="navbar navbar-expand-lg navbar-light">
-                            <!-- Logo -->
-                            <img class="navbar-brand" src="../img/bg-img/doglogosm.png" alt="">
-                            <a class="navbar-brand" href="#">Puppy Luv</a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                            <!-- Menu Area -->
-                            <div class="collapse navbar-collapse" id="ca-navbar">
-                                <ul class="navbar-nav ml-auto" id="nav">
-                                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="quiz.php">Quiz</a></li>
-                                </ul>
-                                <div class="sing-up-button d-lg-none">
-                                    <a href="newUserLogin.php">Sign Up Free</a>
-                                </div>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-                <!-- Signup btn -->
-                <div class="col-12 col-lg-2">
-                    <div class="sing-up-button d-none d-lg-block">
-                        <a href="newUserLogin.php">Sign Up Free</a>
-                    </div>
-                </div>
+                 <h3 class="adminTitle"> PUPPY LUV </h3>
             </div>
         </div>
     </header>
-    <!-- ***** Header Area End ***** -->
-        <!-- ***** Wellcome Area Start ***** -->
-    <section class="wellcome_areaIMAGEGRID clearfix" id="home">
+ 
         
         <!-- ***** ADMIN DASHBOARD START HERE ***** -->
-        <br><br><br> <br> <br>
-        <div class="content"> 
-            <h3 class="dashboardTtile"> Welcome To The Admin Dashboard </h3>
-            
-           
-            
-        <br> <br> 
+        <br>
+        <div class="sidenav">
+          <p class="dash">DASHBOARD </p>
+          <a href="#stats">Statistics</a>
+          <a href="#location">Locations</a>
+          <a href="#breeds">Breeds</a>
         </div>
-
+        <div class="main">
+            <a name="stats"></a>
+            <div class="stats"> Statistics <br> 
+            <img class="stat_img" src="https://www.inogic.com/blog/wp-content/uploads/2016/06/user-adoption-summary.png"></img>
+            
+            </div>
+            
+            <a name="location"></a>
+            <div class="location"> Locations <br>
+            <img  class="stat_img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMBE1MeciLW4dn2SvKCscQmwu7zdZES-Ibau3PpV5LBJyxDp-1cg"></img>
+            
+            
+            </div>
+          
+            <a name="breeds"></a>
+            <div class="breeds"> Breeds
+            
+            
+            
+            </div>
+            
+        </div>
+           <button class="logout"> <img src="https://img.icons8.com/material-outlined/24/000000/exit.png">  Log Out </button>
        
        <!-- ***** ADMIN BASHBOARD ENDS ***** -->
 
-    </section>
+    <!--</section>-->
     <!-- ***** Wellcome Area End ***** -->
     
     
     <!-- ***** Footer Area Start ***** -->
     <footer class="footer-social-icon text-center section_padding_70 clearfix">
-        <!-- footer logo -->
+         <!--footer logo -->
         <div class="footer-text">
-            <h2>Puppy Luv</h2>
+            <!--<h2>Puppy Luv</h2>-->
         </div>
-        <!-- social icon-->
+         <!--social icon-->
         <div class="footer-social-icon">
-            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a href="#"><i class="active fa fa-twitter" aria-hidden="true"></i></a>
-            <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+            <!--<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>-->
+            <!--<a href="#"><i class="active fa fa-twitter" aria-hidden="true"></i></a>-->
+            <!--<a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>-->
+            <!--<a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>-->
         </div>
 
     </footer>
