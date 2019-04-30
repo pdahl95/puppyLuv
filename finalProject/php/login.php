@@ -51,6 +51,7 @@
                                 <ul class="navbar-nav ml-auto" id="nav">
                                     <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
                                     <li class="nav-item"><a class="nav-link" href="quiz.php">Quiz</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
                                 </ul>
                                 <div class="sing-up-button d-lg-none">
                                     <a href="newUserLogin.php">Sign Up Free</a>
@@ -72,7 +73,6 @@
     <!-- ***** Wellcome Area Start ***** -->
     <section class="wellcome_area clearfix" id="home">
         
-        
         <br><br><br>
         <div class="logMain">
 
@@ -86,7 +86,7 @@
                     </div>
 
                     <div class="signin-form">
-                        <h2 class="form-title">Sign up</h2>
+                        <h2 class="form-title">Log In</h2>
                         <form method="POST" class="register-form" id="login-form">
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>

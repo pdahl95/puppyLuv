@@ -45,6 +45,7 @@
                                 <ul class="navbar-nav ml-auto" id="nav">
                                     <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
                                     <li class="nav-item"><a class="nav-link" href="quiz.php">Quiz</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
                                 </ul>
                                 <div class="sing-up-button d-lg-none">
                                     <a href="newUserLogin.php">Sign Up Free</a>
