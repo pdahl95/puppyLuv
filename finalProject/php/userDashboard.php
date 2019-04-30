@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title> Quiz - PuppyLuv</title>
+    <title> User Dashboard </title>
 
     <!-- Favicon -->
     <link rel="icon" href="../img/core-img/favicon.ico">
@@ -66,43 +66,14 @@
         <!-- ***** Wellcome Area Start ***** -->
     <section class="wellcome_areaIMAGEGRID clearfix" id="home">
         
-        <!-- ***** Image Grid Start ***** -->
-        <br>
-       <div class="image_grid"> 
-       <div class="div_title_quiz"> 
-           <h2 class="quiz_title">  QUIZ </h2>
-           <h5> Please select 5 of your favorite dogs. </h5>
-       </div>
-       
-           <div class="row_img_grid">
-            <div class="column"> </div>
-            <div class="column"> </div>
-            <div class="column"> </div>
+        <!-- ***** CONTENT DASHBOARD START HERE ***** -->
+        <br><br><br> <br><br><br> <br><br><br> 
+        <div class="content"> 
+        
+        </div>
 
-        </div>
-        <div class="row_img_grid">
-            <div class="column"> </div>
-            <div class="column"> </div>
-            <div class="column"> </div>
-        </div>
-        <div class="row_img_grid">
-            <div class="column"> </div>
-            <div class="column"> </div>
-            <div class="column"> </div>
-        </div>
-        <div class="row_img_grid">
-            <div class="column"> </div>
-            <div class="column"> </div>
-            <div class="column"> </div>
-        </div>
-        <div class="row_img_grid">
-            <div class="column"> </div>
-            <div class="column"> </div>
-            <div class="column"> </div>
-        </div>
-       </div>
        
-       <!-- ***** Image Grid End ***** -->
+       <!-- ***** CONTENT BASHBOARD ENDS ***** -->
 
     </section>
     <!-- ***** Wellcome Area End ***** -->

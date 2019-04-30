@@ -1354,11 +1354,23 @@ p {
     bottom: 0;
     z-index: 2;
 }
-.div_title_quiz{
+
+.div_title_quiz {
     margin-left: 10%;
     /*border: 1px solid;*/
 }
+
 .quiz_title {
+    font-size: 100px;
+    color: #6e52e5;
+    font-weight: 700;
+    position: relative;
+    z-index: 3;
+}
+.content{
+    background-color: white;
+}
+.dashboardTtile {
     font-size: 100px;
     color: #6e52e5;
     font-weight: 700;
