@@ -66,14 +66,18 @@
         <!-- ***** Wellcome Area Start ***** -->
     <section class="wellcome_areaIMAGEGRID clearfix" id="home">
         
-        <!-- ***** CONTENT DASHBOARD START HERE ***** -->
-        <br><br><br> <br><br><br> <br><br><br> 
+        <!-- ***** USER DASHBOARD START HERE ***** -->
+        <br><br><br> <br> <br>
         <div class="content"> 
-        
+            <h3 class="dashboardTtile"> Dashboard </h3>
+            
+           
+            
+        <br> <br> 
         </div>
 
        
-       <!-- ***** CONTENT BASHBOARD ENDS ***** -->
+       <!-- ***** USER BASHBOARD ENDS ***** -->
 
     </section>
     <!-- ***** Wellcome Area End ***** -->
