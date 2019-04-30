@@ -1,20 +1,22 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10deb1
--- http://www.phpmyadmin.net
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 28, 2019 at 11:25 PM
+-- Host: localhost
+-- Generation Time: Apr 30, 2019 at 12:38 AM
 -- Server version: 5.5.57-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `puppyLyv`
@@ -26,7 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin`
 --
 
-CREATE TABLE IF NOT EXISTS `admin` (
+CREATE TABLE `admin` (
   `admin_id` int(11) NOT NULL,
   `username` varchar(40) NOT NULL,
   `password` varchar(50) NOT NULL
@@ -45,7 +47,7 @@ INSERT INTO `admin` (`admin_id`, `username`, `password`) VALUES
 -- Table structure for table `breed_info`
 --
 
-CREATE TABLE IF NOT EXISTS `breed_info` (
+CREATE TABLE `breed_info` (
   `id` int(11) NOT NULL,
   `breed` varchar(40) NOT NULL,
   `life_expectancy` varchar(40) NOT NULL,
@@ -75,12 +77,11 @@ INSERT INTO `breed_info` (`id`, `breed`, `life_expectancy`, `weight`, `height`) 
 -- Table structure for table `dogs`
 --
 
-CREATE TABLE IF NOT EXISTS `dogs` (
-  `dog_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `dogs` (
+  `dog_id` int(11) NOT NULL,
   `image_url` varchar(512) NOT NULL,
-  `breed` varchar(50) NOT NULL,
-  PRIMARY KEY (`dog_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+  `breed` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dogs`
@@ -114,7 +115,7 @@ INSERT INTO `dogs` (`dog_id`, `image_url`, `breed`) VALUES
 -- Table structure for table `top3`
 --
 
-CREATE TABLE IF NOT EXISTS `top3` (
+CREATE TABLE `top3` (
   `breed` varchar(50) NOT NULL,
   `img_url` varchar(512) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -125,8 +126,9 @@ CREATE TABLE IF NOT EXISTS `top3` (
 -- Table structure for table `user_comments`
 --
 
-CREATE TABLE IF NOT EXISTS `user_comments` (
+CREATE TABLE `user_comments` (
   `user_id` int(11) NOT NULL,
+  `user_name` varchar(50) NOT NULL,
   `comments` varchar(512) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -136,12 +138,58 @@ CREATE TABLE IF NOT EXISTS `user_comments` (
 -- Table structure for table `user_login`
 --
 
-CREATE TABLE IF NOT EXISTS `user_login` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `user_login` (
+  `user_id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `password` int(50) NOT NULL,
-  PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `password` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_question`
+--
+
+CREATE TABLE `user_question` (
+  `user_name` varchar(50) NOT NULL,
+  `q1` varchar(150) NOT NULL,
+  `q2` varchar(150) NOT NULL,
+  `q3` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `dogs`
+--
+ALTER TABLE `dogs`
+  ADD PRIMARY KEY (`dog_id`);
+
+--
+-- Indexes for table `user_login`
+--
+ALTER TABLE `user_login`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `dogs`
+--
+ALTER TABLE `dogs`
+  MODIFY `dog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `user_login`
+--
+ALTER TABLE `user_login`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
