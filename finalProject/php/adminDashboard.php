@@ -203,7 +203,15 @@
     <!-- Active JS -->
     <script src="../js/active.js"></script>
     
-    <script type="text/javascript" src="../js/quizFunctions.js"></script>
+    <script>
+         $(document).ready(function(){
+            $(".logout").on("click", function(){
+                window.location = "../index.html";
+            });
+         });
+        
+        
+    </script>
 </body>
 
 </html>
