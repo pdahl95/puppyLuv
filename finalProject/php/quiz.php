@@ -101,6 +101,16 @@
             <div class="column"> </div>
             <div class="column"> </div>
         </div>
+        <div class="row_img_grid">
+            <div class="column"> </div>
+            <div class="column"> </div>
+            <div class="column"> </div>
+        </div>
+         <div class="row_img_grid">
+            <div class="column"> </div>
+            <div class="column"> </div>
+            <div class="column"> </div>
+        </div>
        </div>
        
        <!-- ***** Image Grid End ***** -->
