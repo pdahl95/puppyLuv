@@ -116,6 +116,6 @@ class __TwigTemplate_eed3ac1573d7598693c1417be4dd72169333ccde03ff6577e65e6a01c40
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "table/structure/optional_action_links.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/table/structure/optional_action_links.twig");
+        return new Twig_Source("", "table/structure/optional_action_links.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/table/structure/optional_action_links.twig");
     }
 }

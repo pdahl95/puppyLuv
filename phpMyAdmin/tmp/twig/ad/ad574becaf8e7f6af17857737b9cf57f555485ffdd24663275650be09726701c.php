@@ -113,6 +113,6 @@ class __TwigTemplate_8a4c4bb9f6830bb0f857d59335468d84d35727ccfad966b8b11b77720d6
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "columns_definitions/column_indexes.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/columns_definitions/column_indexes.twig");
+        return new Twig_Source("", "columns_definitions/column_indexes.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/columns_definitions/column_indexes.twig");
     }
 }

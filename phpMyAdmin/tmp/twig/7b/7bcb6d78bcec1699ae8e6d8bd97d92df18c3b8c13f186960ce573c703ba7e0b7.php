@@ -89,6 +89,6 @@ class __TwigTemplate_de9f75ce6de797d6f6a32db26b44838ba078d729166ca66440b98d94f7f
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "columns_definitions/move_column.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/columns_definitions/move_column.twig");
+        return new Twig_Source("", "columns_definitions/move_column.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/columns_definitions/move_column.twig");
     }
 }

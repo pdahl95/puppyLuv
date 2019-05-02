@@ -63,6 +63,6 @@ class __TwigTemplate_0414b9d7a9a2f903ac9e2048767db502180fc6102ca2f5a83446b89d509
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "columns_definitions/column_null.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/columns_definitions/column_null.twig");
+        return new Twig_Source("", "columns_definitions/column_null.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/columns_definitions/column_null.twig");
     }
 }

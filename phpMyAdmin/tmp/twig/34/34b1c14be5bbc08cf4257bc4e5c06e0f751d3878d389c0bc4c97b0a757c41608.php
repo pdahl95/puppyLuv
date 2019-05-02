@@ -60,6 +60,6 @@ class __TwigTemplate_3a3fb2ae94b9be810e4ce37316c2989997550fa9dd42c8d49abaedfc6e7
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "table/secondary_tabs.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/table/secondary_tabs.twig");
+        return new Twig_Source("", "table/secondary_tabs.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/table/secondary_tabs.twig");
     }
 }

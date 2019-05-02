@@ -76,6 +76,6 @@ class __TwigTemplate_a2a5d8ea6d5cf9addb791585f45318934292aeea0d1be247d7153283d2f
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "columns_definitions/column_length.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/columns_definitions/column_length.twig");
+        return new Twig_Source("", "columns_definitions/column_length.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/columns_definitions/column_length.twig");
     }
 }

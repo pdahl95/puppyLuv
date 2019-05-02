@@ -142,6 +142,6 @@ class __TwigTemplate_1260f187bdb62353f05041c1ad8453b0b1d20828ab2dd77c4e831208d3a
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "columns_definitions/column_default.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/columns_definitions/column_default.twig");
+        return new Twig_Source("", "columns_definitions/column_default.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/columns_definitions/column_default.twig");
     }
 }

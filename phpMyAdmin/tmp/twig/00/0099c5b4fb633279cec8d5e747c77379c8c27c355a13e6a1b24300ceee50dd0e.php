@@ -291,6 +291,6 @@ class __TwigTemplate_409b6a690f8fd87759619919e13b3e1b5fcf78f8595c14ac78a3f436811
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "columns_definitions/table_fields_definitions.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/columns_definitions/table_fields_definitions.twig");
+        return new Twig_Source("", "columns_definitions/table_fields_definitions.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/columns_definitions/table_fields_definitions.twig");
     }
 }

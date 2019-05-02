@@ -125,6 +125,6 @@ class __TwigTemplate_c5642ecb1c7e3fd14abd69edc01dc2d7954c5d710f60607d9f4f8e14940
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "table/structure/add_column.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/table/structure/add_column.twig");
+        return new Twig_Source("", "table/structure/add_column.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/table/structure/add_column.twig");
     }
 }

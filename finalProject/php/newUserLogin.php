@@ -1,3 +1,32 @@
+<?php 
+
+ session_start();
+ 
+   include '../dbConnection.php';
+   $conn = getDatabaseConnection("puppyLyv");
+
+   if(isset($_GET['name'])){
+       
+       $name = $_GET['name'];
+       $email = $_GET['email'];
+       $password = $_GET['password'];
+       
+       
+       $sql = "INSERT INTO user_login (user_id, name, username, password) VALUES ('', '$name', '$email', '$password');";
+       $preparing = $conn->prepare($sql);
+       $response = $preparing->execute();
+
+       echo json_encode($response);
+       
+       //if you dont have an exist it wont stop properly
+       exit(0);
+       
+   }
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,29 +108,30 @@
 
         <!-- Sign up form -->
         <section class="signup">
+            <div class= "alert alert-error"><?$_SESSION['message'] ?></div>
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Sign up</h2>
-                        <form method="POST" class="register-form" id="register-form">
+                        <form method="POST" class="register-form" id="register-form" >
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Your Name"/>
+                                <input type="text" name="name" id="name" placeholder="Your Name" required />
                             </div>
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Your Email"/>
+                                <input type="email" name="email" id="email" placeholder="Your Email" required/>
                             </div>
                             <div class="form-group">
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="Password"/>
+                                <input type="password" name="password" id="password" placeholder="Password" required/>
                             </div>
                             <div class="form-group">
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
+                                <input type="password" name="confirm_password" id="confirm_password" placeholder="Repeat your password" required/>
                             </div>
                             <div class="form-group">
-                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required />
                                 <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree to all statements in  <a href="#" class="term-service">Terms of service</a></label>
                             </div>
                             <div class="form-group form-button">
@@ -160,6 +190,52 @@
     <!-- Login JS -->
     <!--<script src="../vendor/jquery/jquery.min.js"></script>-->
     <script src="../js/main.js"></script>
+    <script> 
+    
+    //ajax call
+    
+    $('#signup').on('click',function(){
+        // alert("test");
+        // getting the value of parameters
+        
+        var name= $('#name').val();
+        var email= $('#email').val();
+        var password= $('#password').val();
+        var password_2 =$('#password_2').val();
+        
+        
+        // ajax call will get the info from the signup page and send it my php file and query it into my database
+        
+        $.ajax({
+           type: "GET",
+           url: "newUserLogin.php",
+           dataType: "json",
+           data: {
+               'name': name,
+               'email': email,
+               'password': password,
+               
+           },
+           success: function(data, status) {
+               console.log(data);
+                alert("Success");
+           },
+           error: function() {
+                alert("Fail!");
+           }
+       });
+    
+        
+    });
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
 </body>
 
 </html>

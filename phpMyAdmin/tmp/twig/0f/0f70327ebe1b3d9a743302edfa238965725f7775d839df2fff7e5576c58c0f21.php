@@ -219,6 +219,6 @@ class __TwigTemplate_8d9dcba7e4e9719a06466e18d13a253d7d49faaeb6d6d12041fcf6632e5
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "table/structure/actions_in_table_structure.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/table/structure/actions_in_table_structure.twig");
+        return new Twig_Source("", "table/structure/actions_in_table_structure.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/table/structure/actions_in_table_structure.twig");
     }
 }

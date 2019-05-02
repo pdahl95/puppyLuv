@@ -282,6 +282,6 @@ class __TwigTemplate_9c6f0a2d0170268e9b4b96ebe2e022eb131b3cdd99bf3aed1b3fd7d20b2
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "table/structure/row_stats_table.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/table/structure/row_stats_table.twig");
+        return new Twig_Source("", "table/structure/row_stats_table.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/table/structure/row_stats_table.twig");
     }
 }

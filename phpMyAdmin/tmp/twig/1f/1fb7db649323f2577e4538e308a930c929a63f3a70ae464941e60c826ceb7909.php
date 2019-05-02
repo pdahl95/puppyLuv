@@ -61,6 +61,6 @@ class __TwigTemplate_4837a25e17c41010d0b2560646979269e4c12818d5cee9024274376cf48
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "table/structure/move_columns_dialog.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/table/structure/move_columns_dialog.twig");
+        return new Twig_Source("", "table/structure/move_columns_dialog.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/table/structure/move_columns_dialog.twig");
     }
 }

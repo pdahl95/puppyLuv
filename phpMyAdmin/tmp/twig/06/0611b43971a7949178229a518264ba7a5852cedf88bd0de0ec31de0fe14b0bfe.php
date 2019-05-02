@@ -62,6 +62,6 @@ class __TwigTemplate_e1fa7d5272d7208ac19892e6f1a8747e9173e1a7a5fc342272b9ad9ba6f
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "columns_definitions/column_auto_increment.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/columns_definitions/column_auto_increment.twig");
+        return new Twig_Source("", "columns_definitions/column_auto_increment.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/columns_definitions/column_auto_increment.twig");
     }
 }

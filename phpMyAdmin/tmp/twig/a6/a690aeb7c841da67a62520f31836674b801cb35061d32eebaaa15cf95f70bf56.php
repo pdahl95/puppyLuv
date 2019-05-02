@@ -100,6 +100,6 @@ class __TwigTemplate_fa8c39a5892e1bfc4d6627bf239cc1c7f037a94d0ad21065d4a68703d87
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "table/structure/table_structure_header.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/table/structure/table_structure_header.twig");
+        return new Twig_Source("", "table/structure/table_structure_header.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/table/structure/table_structure_header.twig");
     }
 }

@@ -64,6 +64,6 @@ class __TwigTemplate_de0012387f26b326a04407a987e3254e69ed0c13254998f72325ddf4182
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "columns_definitions/column_comment.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/columns_definitions/column_comment.twig");
+        return new Twig_Source("", "columns_definitions/column_comment.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/columns_definitions/column_comment.twig");
     }
 }
