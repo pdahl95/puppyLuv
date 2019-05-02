@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-include 'dbConnection.php';
-$dbConn = startConnection("puppyLyv");
+include '../dbConnection.php';
+$dbConn = getDatabaseConnection("puppyLyv");
 
 $username = $_POST['username'];
-$password = sha1($_POST['password']);
+$password = $_POST['password'];
 
 $sql = "SELECT * FROM admin
                  WHERE username = :username 
@@ -18,15 +18,15 @@ $stmt = $dbConn->prepare($sql);
 $stmt->execute($np);
 $record = $stmt->fetch(PDO::FETCH_ASSOC); //we're expecting just one record
 
-//print_r($record);
+print_r($record);
 
 if (empty($record)) {
     
     echo "Wrong username or password!!";
 } else {
    
-   $_SESSION['adminFullName'] = $record['firstName'] .  "   "  . $record['lastName'];
-   header('Location: admin.php'); //redirects to another program
+  $_SESSION['adminFullName'] = $record['firstName'] .  "   "  . $record['lastName'];
+  header('Location: adminDashboard.php'); //redirects to another program
     
 }
 

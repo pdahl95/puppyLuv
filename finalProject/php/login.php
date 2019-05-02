@@ -76,12 +76,13 @@
         <br><br><br>
         <div class="logMain">
 
-        <!-- Sing in  Form -->
+        <!-- Sign-in  Form -->
         <section class="sign-in">
             <div class="container">
                 <div class="signin-content">
                     <div class="signin-image">
                         <figure><img src="../img/signInUser.png" alt="sing up image"></figure>
+                        <!--create an account link-->
                         <a href="newUserLogin.php" class="signup-image-link">Create an account</a>
                     </div>
 
@@ -90,18 +91,18 @@
                         <form method="POST" class="register-form" id="login-form">
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="your_name" id="your_name" placeholder="Your Name"/>
+                                <input type="text" name="username" id="username" placeholder="Your Name"/>
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="your_pass" id="your_pass" placeholder="Password"/>
+                                <input type="password" type="password" name="password" placeholder="Password"/>
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
                                 <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+                                <input type="submit" name="signin" id="signin" class="form-submit" value="Login"/>
                             </div>
                         </form>
                         <div class="social-login">
@@ -160,6 +161,41 @@
     <!-- Login JS -->
     <!--<script src="../vendor/jquery/jquery.min.js"></script>-->
     <script src="../js/main.js"></script>
+        <script> 
+    
+    //ajax call
+    /*global $*/
+    $('#signin').on('click',function(){
+        // alert("test");
+        // getting the value of parameters
+        
+        var username= $('#username').val();
+        var password= $('#password').val();
+        // ajax call will get the info from the signup page and send it my php file and query it into my database
+        
+        $.ajax({
+           type: "GET",
+           url: "loginProcess.php",
+           dataType: "json",
+           data: {
+               'username': username,
+               'password': password,
+               
+           },
+           success: function(data, status) {
+               console.log(data);
+                alert("Success");
+           },
+           error: function() {
+                alert("Fail!");
+           }
+       });
+    
+        
+    });
+
+    
+    </script>
 </body>
 
 </html>
