@@ -71,6 +71,15 @@
         <div class="content"> 
             <h3 class="dashboardTtile"> Welcome To The User Dashboard </h3>
             
+            
+            <div id="content"> 
+            
+            <!--to display user information about their top matches -->
+            
+            
+            
+            
+            </div>
            
             
         <br> <br> 

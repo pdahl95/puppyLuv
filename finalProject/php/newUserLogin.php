@@ -133,6 +133,7 @@
                             <div class="form-group">
                                 <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required />
                                 <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree to all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                                  <span id="passwordValidation"> </span>
                             </div>
                             <div class="form-group form-button">
                                 <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
@@ -203,27 +204,36 @@
         var password= $('#password').val();
         var password_2 =$('#password_2').val();
         
+        if (password != password_2) {
+            $("#passwordValidation").html("Password does to match! Please retype password!").css({
+                "color": "red",
+                "font-size": "18px"
+            });
+        }else {
+            $.ajax({
+               type: "GET",
+               url: "newUserLogin.php",
+               dataType: "json",
+               data: {
+                   'name': name,
+                   'email': email,
+                   'password': password,
+                   
+               },
+               success: function(data, status) {
+                   console.log(data);
+                    alert("Success");
+               },
+               error: function() {
+                    alert("Fail!");
+               }
+           });
+        }
+        
         
         // ajax call will get the info from the signup page and send it my php file and query it into my database
         
-        $.ajax({
-           type: "GET",
-           url: "newUserLogin.php",
-           dataType: "json",
-           data: {
-               'name': name,
-               'email': email,
-               'password': password,
-               
-           },
-           success: function(data, status) {
-               console.log(data);
-                alert("Success");
-           },
-           error: function() {
-                alert("Fail!");
-           }
-       });
+
     
         
     });

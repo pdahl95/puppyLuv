@@ -144,7 +144,9 @@
             <div class="stats_row">
               <div class="stats_column">
                 <div class="text"> Number of users </div>
-                <img class="stat_img" src="https://www.inogic.com/blog/wp-content/uploads/2016/06/user-adoption-summary.png"></img>
+                <!--<img class="stat_img" src="https://www.inogic.com/blog/wp-content/uploads/2016/06/user-adoption-summary.png"></img>-->
+                
+                
               </div>
               <div class="stats_column">
                 <div class="text"> Number of breeds </div>
@@ -161,8 +163,7 @@
             
             <a name="location"></a>
             <div class="location"> Locations <br>
-            <img  class="stat_img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMBE1MeciLW4dn2SvKCscQmwu7zdZES-Ibau3PpV5LBJyxDp-1cg"></img>
-            
+
             
             </div>
           
