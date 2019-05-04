@@ -4,8 +4,8 @@ session_start();
 include '../dbConnection.php';
 $dbConn = getDatabaseConnection("puppyLyv");
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+$username = $_GET['username'];
+$password = $_GET['password'];
 
 $sql = "SELECT * FROM admin
                  WHERE username = :username 
@@ -25,7 +25,7 @@ if (empty($record)) {
     echo "Wrong username or password!!";
 } else {
    
-  $_SESSION['adminFullName'] = $record['firstName'] .  "   "  . $record['lastName'];
+//   $_SESSION['adminFullName'] = $record['firstName'] .  "   "  . $record['lastName'];
   header('Location: adminDashboard.php'); //redirects to another program
     
 }

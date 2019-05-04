@@ -166,7 +166,7 @@
     //ajax call
     /*global $*/
     $('#signin').on('click',function(){
-        // alert("test");
+        //  alert("test");
         // getting the value of parameters
         
         var username= $('#username').val();
@@ -176,11 +176,10 @@
         $.ajax({
            type: "GET",
            url: "loginProcess.php",
-           dataType: "json",
+           dataType: "text",
            data: {
                'username': username,
                'password': password,
-               
            },
            success: function(data, status) {
                console.log(data);
