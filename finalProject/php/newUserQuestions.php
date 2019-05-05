@@ -1,3 +1,30 @@
+<?php
+    //  inserts answers from newUserQuestions.php
+    session_start();
+    
+    include '../dbConnection.php';
+    $conn = getDatabaseConnection("puppyLyv");
+    
+    if(isset($_GET['name'])){
+        $name = $_GET['name'];
+        $q1 = $_GET['q1'];
+        $q2 = $_GET['q2'];
+        $q3 = $_GET['q3'];
+    
+    $sql="INSERT INTO user_question ('user_question', q1, q2, q3) VALUES ('$name', $q1', '$q2', '$q3');";
+        $preparing = $conn->prepare($sql);
+        $response = $preparing->execute();
+
+        echo json_encode($response);
+       
+      //if you dont have an exist it wont stop properly
+      exit(0);
+       
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -91,12 +118,14 @@
                             
                             <div class="signin-form">
                 <form action="insertUserAnswers.php" method="post">
+                    
+                    Name: <input id="name" type="text" name="username"/> <br> 
         
-        Age: <input type="text" name="q1" /><br><br>
+        Age: <input id="q1" type="text" name="q1" /><br><br>
         
-        Location: <input type="text" name="q2" /><br><br>
+        Location: <input id="q2" type="text" name="q2" /><br><br>
         
-        Physical Activity: <select name="q3">
+        Physical Activity: <select id="q3" name="q3">
                              <option value="none">None</option>
                              <option value="moderate">Moderate</option>
                              <option value="alot">Alot</option>
@@ -159,6 +188,39 @@
     <!-- Login JS -->
     <!--<script src="../vendor/jquery/jquery.min.js"></script>-->
     <script src="../js/main.js"></script>
+    
+    <script>
+        /* global $ */ 
+        $("#submit").on("click", function(){
+            // alert("test");
+            var name = $('#name').val();
+            var q1 = $('#q1').val();
+            var q2 = $('#q2').val();
+            // var q3 = $('#q3').val(); 
+            
+             $.ajax({
+                   type: "GET",
+                   url: "newUserQuestions.php",
+                   dataType: "json",
+                   data: {
+                       'name': name,
+                       'q1': q1,
+                       'q2': q2,
+                    //   'q3': q3
+                   },
+                   success: function(data, status) {
+                       console.log(data);
+                        alert("Success");
+                   },
+                   error: function() {
+                        alert("Fail!");
+                   }
+                   });
+        });
+       
+        
+    </script>
+    
 </body>
 
 </html>
