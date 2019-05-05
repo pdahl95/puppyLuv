@@ -228,6 +228,7 @@
                     alert("Fail!");
                }
            });
+           window.location = "newUserQuestions.php";
         }
         
         

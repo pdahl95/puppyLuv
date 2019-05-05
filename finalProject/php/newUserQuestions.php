@@ -11,7 +11,7 @@
         $q2 = $_GET['q2'];
         $q3 = $_GET['q3'];
     
-    $sql="INSERT INTO user_question ('user_name', q1, q2, q3) VALUES ('$name', $q1', '$q2', '$q3');";
+        $sql= "INSERT INTO user_question (user_name, q1, q2, q3) VALUES ('$name', $q1', '$q2', '$q3');";
         $preparing = $conn->prepare($sql);
         $response = $preparing->execute();
 
@@ -22,7 +22,7 @@
        
 
 }
-
+ 
 ?>
 
 <!DOCTYPE html>
@@ -52,6 +52,24 @@
 
     <!-- Responsive CSS -->
     <link href="../css/responsive.css" rel="stylesheet">
+    
+    <style type="text/css">
+        #submit{
+            display: inline-block;
+            background: #6dabe4;
+            color: #fff;
+            border-bottom: none;
+            width: auto;
+            padding: 15px 39px;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -o-border-radius: 5px;
+            -ms-border-radius: 5px;
+            margin-top: 25px;
+            cursor: pointer;
+        }
+    </style>
 
 </head>
 
@@ -121,20 +139,20 @@
                     
                     Name: <input id="name" type="text" name="username"/> <br> 
         
-        Age: <input id="q1" type="text" name="q1" /><br><br>
-        
-        Location: <input id="q2" type="text" name="q2" /><br><br>
-        
-        Physical Activity: <select id="q3" name="q3">
-                             <option value="none">None</option>
-                             <option value="moderate">Moderate</option>
-                             <option value="alot">Alot</option>
-                        </select><br><br>
+                    Age: <input id="q1" type="text" name="q1" /><br><br>
+                    
+                    Location: <input id="q2" type="text" name="q2" /><br><br>
+                    
+                    Physical Activity: <select id="q3" name="q3">
+                                         <option value="none">None</option>
+                                         <option value="moderate">Moderate</option>
+                                         <option value="alot">Alot</option>
+                                    </select><br><br>
         
          
-        <div class="form-group form-button">
-                                <input type="submit" name="submit" id="submit" class="form-submit" value="Submit"/>
-                            </div>
+                    <div class="form-group form-button">
+                        <button type="submit" id="submit"> Register </button>
+                    </div>
                             
                             
                         </form>
@@ -192,21 +210,21 @@
     <script>
         /* global $ */ 
         $("#submit").on("click", function(){
-            //alert("test");
+            alert("test");
             var name = $('#name').val();
             var q1 = $('#q1').val();
             var q2 = $('#q2').val();
-            var q3 = $('#q3').val(); 
+            // var q3 = $('#q3').val(); 
             
              $.ajax({
                    type: "GET",
                    url: "newUserQuestions.php",
-                   dataType: "json",
+                   dataType: "text",
                    data: {
                        'name': name,
                        'q1': q1,
                        'q2': q2,
-                      'q3': q3,
+                    //   'q3': q3,
                    },
                    success: function(data, status) {
                        console.log(data);
