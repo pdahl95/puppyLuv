@@ -2,50 +2,35 @@
 session_start();
 
 include '../dbConnection.php';
-$dbConn = getDatabaseConnection("puppyLyv");
+$conn = getDatabaseConnection("puppyLyv");
 
-//   if(isset($_GET['username'])){
-      
-//     $username = $_GET['username'];
-//     $password = $_GET['password'];
+if(isset($_POST['username'])){
+    $username = $_POST['username'];
+    $password = sha1($_POST['password']);
     
-//     $sql = "SELECT * FROM admin where username = '$username';";
+    $queryAdmin = "SELECT * FROM admin WHERE username = '$username' and password='$password';"; 
+    $queryUsers = "select * from user_login where username = $username and password=$password;"; 
 
-//     $stmt = $dbConn->prepare($sql);
-//     $stmt->execute();
-//     $record = $stmt->fetch(PDO::FETCH_ASSOC); 
+    $stmt = $conn->prepare($queryAdmin); 
+    $stmt->execute();
+    $response = $stmt->fetch(PDO::FETCH_ASSOC);
     
-//     print_r($record);
+    print_r($resoponse);
     
-//     exit(0);
-//   }
-
-    $rawJsonString = file_get_contents("php://input");
-    $jsonData = json_decode($rawJsonString, true);
-    
-    $sql = "SELECT * FROM admin " . "WHERE username = :username ";
-    
-    $stmt = $dbConn->prepare($sql);
-    $stmt->execute(array (":username" => $_GET['username']));
-    
-    $record = $stmt->fetch();
-    
-    $isAuthenticated = password_verify($_GET["password"], $record["password"]);
-    
-    if($isAuthenticated){
-        $_SESSION['username'] = $record['username'];
+    if(sizeof($resoponse) > 0){
+        header("Location: adminDashboard.php");
+        exit(0);
     }
     
-    header("Access-Control-Allow-Origin: *");
-    header("Content-Type: application/json");
-    
-    echo json_encode(array("isAuthenticated" => $isAuthenticated));
-
-    exit(0);
-  
-
-
-
+    $stmtP = $conn->prepare($queryUsers); 
+    $stmtP->execute();
+    $responsePass = $stmtP->fetch(PDO::FETCH_ASSOC);
+    if(count($resoponse)>0){
+        header("Location: userDashboard.php");
+        exit(0);
+    }
+        
+  }
 
 ?>
 
@@ -147,7 +132,7 @@ $dbConn = getDatabaseConnection("puppyLyv");
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" type="password" name="password" placeholder="Password"/>
+                                <input id="password" type="password" name="password" placeholder="Password"/>
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
@@ -218,61 +203,40 @@ $dbConn = getDatabaseConnection("puppyLyv");
     //ajax call
     /*global $*/
     
-    $("#signin").on('click', function(e) {
-            $.ajax({
-                type: "GET",
-                url: "login.php",
-                dataType: "json",
-                data: {
-                    "username": $("input[name='username']").val(),
-                    "password": $("input[name='password']").val(),
-                },
-                success: function(data, status) {
-                    console.log(data);
-                    if (data.isAuthenticated) {
-                        window.location = "index.php"
-                    } else {
-                        $("#message").html("Bad email or password");
-                        $("#message").removeClass("open-hidden");
-                    }
-                },
-                error: function (){
-                    console.log(arguments);
-                },
-                complete: function(data, status) { //optional, used for debugging purposes
-                    //console.log(status);
-                }
-            });
-        })
-    
-    
-    // $('#signin').on('click',function(){
-    //     //  alert("test");
-    //     // getting the value of parameters
+    $('#signin').on('click',function(){
+        //  alert("test");
+        // getting the value of parameters
         
-    //     var username= $('#username').val();
-    //     var password= $('#password').val();
-    //     // ajax call will get the info from the signup page and send it my php file and query it into my database
+        var username= $('#username').val();
+        var password= $('#password').val();
+        // ajax call will get the info from the signup page and send it my php file and query it into my database
         
-    //     $.ajax({
-    //       type: "GET",
-    //       url: "loginProcess.php",
-    //       dataType: "text",
-    //       data: {
-    //           'username': username,
-    //           'password': password,
-    //       },
-    //       success: function(data, status) {
-    //           console.log(data);
-    //             alert("Success");
-    //       },
-    //       error: function() {
-    //             alert("Fail!");
-    //       }
-    //   });
+        $.ajax({
+          type: "POST",
+          url: "login.php",
+          dataType: "json", // data is what you are expecting to reviece
+          contentType:"application/json", // contentType is what you are sending 
+          data: {
+              'username': username,
+              'password': password
+          },
+          success: function(data, status) {
+              console.log(data);
+                alert("Success");
+          },
+          error: function(xhr, status, errorThrown) {
+                $('#result').html('<p>status code: '+jqXHR.status+'</p><p>errorThrown: ' + errorThrown + '</p><p>jqXHR.responseText:</p><div>'+jqXHR.responseText + '</div>');
+                console.log('jqXHR:');
+                console.log(jqXHR);
+                console.log('textStatus:');
+                console.log(textStatus);
+                console.log('errorThrown:');
+                console.log(errorThrown);
+          }
+      });
     
         
-    // });
+    });
 
     
     </script>

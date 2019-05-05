@@ -1,34 +1,34 @@
-<?php
-session_start();
+// <?php
+// session_start();
 
-include '../dbConnection.php';
-$dbConn = getDatabaseConnection("puppyLyv");
+// include '../dbConnection.php';
+// $dbConn = getDatabaseConnection("puppyLyv");
 
-$username = $_GET['username'];
-$password = $_GET['password'];
+// $username = $_GET['username'];
+// $password = $_GET['password'];
 
-$sql = "SELECT * FROM admin
-                 WHERE username = :username 
-                 AND  password = :password ";                 
-$np = array();
-$np[':username'] = $username;
-$np[':password'] = $password;
+// $sql = "SELECT * FROM admin
+//                  WHERE username = :username 
+//                  AND  password = :password ";                 
+// $np = array();
+// $np[':username'] = $username;
+// $np[':password'] = $password;
 
-$stmt = $dbConn->prepare($sql);
-$stmt->execute($np);
-$record = $stmt->fetch(PDO::FETCH_ASSOC); //we're expecting just one record
+// $stmt = $dbConn->prepare($sql);
+// $stmt->execute($np);
+// $record = $stmt->fetch(PDO::FETCH_ASSOC); //we're expecting just one record
 
-print_r($record);
+// print_r($record);
 
-if (empty($record)) {
+// if (empty($record)) {
     
-    echo "Wrong username or password!!";
-} else {
+//     echo "Wrong username or password!!";
+// } else {
    
-//   $_SESSION['adminFullName'] = $record['firstName'] .  "   "  . $record['lastName'];
-  header('Location: adminDashboard.php'); //redirects to another program
+// //   $_SESSION['adminFullName'] = $record['firstName'] .  "   "  . $record['lastName'];
+//   header('Location: adminDashboard.php'); //redirects to another program
     
-}
+// }
 
 
-?>
+// ?>

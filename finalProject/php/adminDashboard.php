@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+HELLO<!--<!DOCTYPE html>-->
 <html lang="en">
 
 <head>
@@ -6,18 +6,18 @@
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+     The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags 
 
-    <!-- Title -->
+     Title 
     <title> Admin Dashboard </title>
 
-    <!-- Favicon -->
+     Favicon 
     <link rel="icon" href="../img/core-img/favicon.ico">
 
-    <!-- Core Stylesheet -->
+     Core Stylesheet 
     <link href="../style.css" rel="stylesheet">
 
-    <!-- Responsive CSS -->
+     Responsive CSS 
     <link href="../css/responsive.css" rel="stylesheet">
     
     <style type="text/css">
@@ -115,12 +115,12 @@
 </head>
 
 <body>
-    <!-- Preloader Start -->
+     Preloader Start 
     <div id="preloader">
         <div class="colorlib-load"></div>
     </div>
 
-    <!-- ***** Header Area Start ***** -->
+     ***** Header Area Start ***** 
     <header class="">
         <div class="container-fluid">
             <div class="row align-items-center">
@@ -130,7 +130,7 @@
     </header>
  
         
-        <!-- ***** ADMIN DASHBOARD START HERE ***** -->
+         ***** ADMIN DASHBOARD START HERE ***** 
         <br>
         <div class="sidenav">
           <p class="dash">DASHBOARD </p>
@@ -144,7 +144,7 @@
             <div class="stats_row">
               <div class="stats_column">
                 <div class="text"> Number of users </div>
-                <!--<img class="stat_img" src="https://www.inogic.com/blog/wp-content/uploads/2016/06/user-adoption-summary.png"></img>-->
+                <img class="stat_img" src="https://www.inogic.com/blog/wp-content/uploads/2016/06/user-adoption-summary.png"></img>
                 
                 
               </div>
@@ -177,31 +177,31 @@
         </div>
            <button class="logout"> <img src="https://img.icons8.com/material-outlined/24/000000/exit.png">  Log Out </button>
        
-       <!-- ***** ADMIN BASHBOARD ENDS ***** -->
+        ***** ADMIN BASHBOARD ENDS ***** 
 
-    <!-- ***** Wellcome Area End ***** -->
+     ***** Wellcome Area End ***** 
     
     
-    <!-- ***** Footer Area Start ***** -->
+     ***** Footer Area Start ***** 
     <footer class="footer-social-icon text-center section_padding_70 clearfix">
         <div class="footer-text"></div>
         <div class="footer-social-icon"> </div>
     </footer>
-    <!-- ***** Footer Area Start ***** -->
+     ***** Footer Area Start ***** 
 
-    <!-- Jquery-2.2.4 JS -->
+     Jquery-2.2.4 JS 
     <script src="../js/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
+     Popper js 
     <script src="../js/popper.min.js"></script>
-    <!-- Bootstrap-4 Beta JS -->
+     Bootstrap-4 Beta JS 
     <script src="../js/bootstrap.min.js"></script>
-    <!-- All Plugins JS -->
+     All Plugins JS 
     <script src="../js/plugins.js"></script>
-    <!-- Slick Slider Js-->
+     Slick Slider Js
     <script src="../js/slick.min.js"></script>
-    <!-- Footer Reveal JS -->
+     Footer Reveal JS 
     <script src="../js/footer-reveal.min.js"></script>
-    <!-- Active JS -->
+     Active JS 
     <script src="../js/active.js"></script>
     
     <script>
