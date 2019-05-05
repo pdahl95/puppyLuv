@@ -1,0 +1,80 @@
+[05-May-2019 01:26:57 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''user_question', q1, q2, q3) VALUES ('dan', 22', 'usa', '')' at line 1' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 16
+[05-May-2019 01:34:05 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''user_question', q1, q2, q3) VALUES ('dan', 22', 'usa', '')' at line 1' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 16
+[05-May-2019 01:35:03 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''user_question', q1, q2) VALUES ('dan', 22', 'usa')' at line 1' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 16
+[05-May-2019 01:44:24 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''user_question', q1, q2) VALUES ('dan', 22', 'usa')' at line 1' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 16
+[05-May-2019 01:45:49 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''user_question', q1, q2) VALUES ('dan', 22', 'usa')' at line 1' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 16
+[05-May-2019 01:46:14 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''user_question', q1, q2) VALUES ('dan', 22', 'usa')' at line 1' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 16
+[05-May-2019 01:49:02 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''user_question', q1, q2) VALUES ('test', 22', 'ca')' at line 1' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 16
+[05-May-2019 01:59:55 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''user_question', q1, q2) VALUES ('dan', 22', 'usa')' at line 1' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 16
+[05-May-2019 02:05:54 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''user_question', q1, q2) VALUES ('dan', 21', 'ca')' at line 1' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 16
+[05-May-2019 02:08:26 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''user_question', q1, q2) VALUES ('dan', 21', 'usa')' at line 1' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 16
+[05-May-2019 02:27:20 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''user_name', q1, q2, q3) VALUES ('test', 12', 'nevada', 'moderate')' at line 1' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 16
+[05-May-2019 02:29:00 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''user_name', q1, q2, q3) VALUES ('test', 12', 'nevada', 'none')' at line 1' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 16
+[05-May-2019 02:32:32 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''user_name', q1, q2, q3) VALUES ('test', 12', 'nevada', 'moderate')' at line 1' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 16
+[05-May-2019 02:36:35 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''user_name', q1, q2, q3) VALUES ('dan', 22', 'nevada', 'alot')' at line 1' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 16
+[05-May-2019 02:44:44 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''user_name', q1, q2, q3) VALUES ('test', 12', 'nevada', 'moderate')' at line 1' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 16
+[05-May-2019 02:49:13 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''user_name', q1, q2, q3) VALUES ('test', 12', 'nevada', 'moderate')' at line 1' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 16

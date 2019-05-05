@@ -11,13 +11,13 @@
         $q2 = $_GET['q2'];
         $q3 = $_GET['q3'];
     
-    $sql="INSERT INTO user_question ('user_question', q1, q2, q3) VALUES ('$name', $q1', '$q2', '$q3');";
+    $sql="INSERT INTO user_question ('user_name', q1, q2, q3) VALUES ('$name', $q1', '$q2', '$q3');";
         $preparing = $conn->prepare($sql);
         $response = $preparing->execute();
 
         echo json_encode($response);
        
-      //if you dont have an exist it wont stop properly
+      //if you dont have an exit it wont stop properly
       exit(0);
        
 
@@ -114,10 +114,10 @@
 
                     <div class="signin-form">
                         <h2 class="form-title">Please Answer the Questions</h2>
-                        <form method="POST" class="register-form" id="login-form">
+                        <!--<form method="GET" class="register-form" id="login-form">-->
                             
-                            <div class="signin-form">
-                <form action="insertUserAnswers.php" method="post">
+                            
+                <form action="" method="GET">
                     
                     Name: <input id="name" type="text" name="username"/> <br> 
         
@@ -138,9 +138,9 @@
                             
                             
                         </form>
-                        </form>
+                        <!--</form>-->
                         
-                    </div>
+                    
                 </div>
             </div>
         </section>
@@ -192,11 +192,11 @@
     <script>
         /* global $ */ 
         $("#submit").on("click", function(){
-            // alert("test");
+            //alert("test");
             var name = $('#name').val();
             var q1 = $('#q1').val();
             var q2 = $('#q2').val();
-            // var q3 = $('#q3').val(); 
+            var q3 = $('#q3').val(); 
             
              $.ajax({
                    type: "GET",
@@ -206,7 +206,7 @@
                        'name': name,
                        'q1': q1,
                        'q2': q2,
-                    //   'q3': q3
+                      'q3': q3,
                    },
                    success: function(data, status) {
                        console.log(data);
