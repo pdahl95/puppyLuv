@@ -1,10 +1,7 @@
+/*global Vue*/
 var app = new Vue({
-	el: '#main',
-	data: {
-    title: 'The Doggo Quiz',
-	message: 'Take the quiz to find out which dog is best for you!',
-    // footerMessage: 'Created by Paul Johnston',
-    // available: 'Source code available on ',
+	  el: '#main',
+	  data: {
     answers: [],
     current: {},
     finishedQuiz: false,
@@ -13,7 +10,6 @@ var app = new Vue({
     enableSubmit: false,
     breed: '',
     subBreed: '',
-
 	}, //end data
   methods: {
     finishedQuizFunction: function() {
@@ -26,24 +22,24 @@ var app = new Vue({
         } else if (this.answers[1].actualAnswer ==='B') {
           this.breed = 'Beagle';
         } else {
-          this.breed = 'Dingo';
+          this.breed = 'Cardigan Corgi';
         }
 
       } else if (this.answers[0].actualAnswer === 'B') {
         if (this.answers[1].actualAnswer === 'A') {
-          this.breed = 'Whippet';
+          this.breed = 'Golden Retriever';
         } else if (this.answers[1].actualAnswer ==='B') {
-          this.breed = 'Labrador';
+          this.breed = 'Husky';
         } else {
-          this.breed = 'Akita';
+          this.breed = 'Germanshepherd';
         }
       } else {
         if (this.answers[1].actualAnswer === 'A') {
-          this.breed = 'Kelpie';
+          this.breed = 'Lhasa';
         } else if (this.answers[1].actualAnswer ==='B') {
-          this.breed = 'Germanshepherd';
+          this.breed = 'French Bulldog';
         } else {
-          this.breed = 'Leonberg';
+          this.breed = 'Pomeranian';
         }
       }
 
