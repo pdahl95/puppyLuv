@@ -17,11 +17,15 @@
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 
+    <!-- Quiz Styling -->
+    <!--<link href="css/quizStyling.css" rel="stylesheet">-->
     <!-- Core Stylesheet -->
     <link href="style.css" rel="stylesheet">
+  
 
     <!-- Responsive CSS -->
     <link href="css/responsive.css" rel="stylesheet">
+
 
 </head>
 
@@ -40,7 +44,7 @@
                     <div class="menu_area">
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <!-- Logo -->
-                            <img class="navbar-brand" src="../img/bg-img/doglogosm.png" alt="">
+                            <img class="navbar-brand" src="img/bg-img/doglogosm.png" alt="">
                             <a class="navbar-brand" href="#">Puppy Luv</a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                             <!-- Menu Area -->
@@ -67,17 +71,100 @@
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
+   
         <!-- ***** Wellcome Area Start ***** -->
     <section class="wellcome_areaIMAGEGRID clearfix" id="home">
-        
-        
-        
-        
-        
-        
+         <br><br><br>  <br><br><br>
+ <!--///////////////// start of new quiz section //////////////////-->
+<!--<section class="quiz-background-area">        -->
+<section id="container" class="slidein">
+    <section id="titleSection">
+      <div id="myTitle">
+        <div class=welcome-quiz-text>Welcome to the PuppyLuv Quiz</div>
+        <div class=welcome-quiz-text-summary>This quiz consists of three questions to match you to your ideal breed.</div>
+      </div>
+      <div id="score"></div>
+    </section>
+    <section id="quizSection">
+        <!--<div v-if="!finishedQuiz">-->
+      <div id="begin">
+        <button onclick="beginQuiz();">Begin the Quiz</button>
+      </div>
+       <!--start q1 test-->
+       <div class="question">
+				<h5>Question 1</h5>
+				<div class="answers">
+					<p>How active are you?</p>
+					<form action="">
+					  <input type="radio" id="q0A" name="answer0" v-on:click="answeredQuestion(0,'A')"><label for="q0A">I run every morning.</label><br>
+					  <input type="radio" id="q0B" name="answer0" v-on:click="answeredQuestion(0,'B')"><label for="q0B">I exersice at least three times a week.</label><br>
+					  <input type="radio" id="q0C" name="answer0" v-on:click="answeredQuestion(0,'C')"><label for="q0C">I am more of a couch potato.</label>
+					</form>
+				</div>
+			</div>
+      
+      <!--start q1 actual-->
+      <div id="questionOne" class="fadein" class="question">
+        <h3>Question 1</h3>
+        <div class="answers">
+        <p>How active are you?</p>
+        <button id="temp" onclick="checkQOne(event);">Temperature</button>
+        <button id="windSpeed" onclick="checkQOne(event);">Wind Speed</button>
+        <button id="AtmosPress" onclick="checkQOne(event);">Atmospheric Pressure</button>
+      </div>
+      </div>
+      
+      
+      
+      <div id="questionTwo" class="fadein">
+        <h3>Question 2:</h3>
+        <p>Click on the image below that depicts:</p>
+        <div id="randomWeatherDisp"></div>
+        <div class="images">
+          <img src="https://image.ibb.co/fKgav6/rain.png" alt="rainy day" id="rain" onclick="checkQTwo(event);">
+          <img src="https://image.ibb.co/jpKTF6/sun.png" alt="wind farm" id="sun" onclick="checkQTwo(event);">
+          <img src="https://image.ibb.co/jypjoR/clouds.png" alt="beautiful clouds" id="clouds" onclick="checkQTwo(event);">
+        </div>
+      </div>
+      <div id="questionThree" class="fadein">
+        <h3>Question 3:</h3>
+        <p>Which of the below are a type of cloud? (Check all 3 correct answers)</p>
+        <div class="boxes">
+          <p>
+          <input type="checkbox" id="mammatus" value="mammatus" name="q3">
+          <label for="mammatus">Mammatus</label>
+          </p>
+          <p>
+          <input type="checkbox" id="elephant" value="elephant" name="q3">
+          <label for="elephant">Elephant</label>
+          </p>
+          <p>
+          <input type="checkbox" id="cumulus" value="cumulus" name="q3">
+          <label for="cumulus">Cumulus</label>
+          </p>
+          <p>
+          <input type="checkbox" id="nimbus" value="nimbus" name="q3">
+          <label for="nimbus">Nimbus</label>
+          </p>
+        </div>
+        <button onclick="checkQThree();">Submit Answer</button>
+      </div>
+  
+      <div id="finish" class="fadein">
+        <p>You've completed the quiz with a score of:</p>
+        <div id="finalScore"></div>
+        <button id="resetButton" onclick="window.location.href=window.location.href">Play Again</button>
+      </div>
+    </section>
+  </section>
+<!--</section>-->
+  
+  
+  <!--///////////////// end of new quiz section //////////////////-->
+
  	<div id="main">
 		<h1>Take the Quiz</h1>
-		<p>{{message}}</p>
+		<p>Take the quiz to find your perfect breed match!</p>
 
 		<div v-if="!finishedQuiz">
 			<div class="question">
@@ -149,7 +236,7 @@
 
     </footer>
     <!-- ***** Footer Area Start ***** -->
-
+    <script src="js/quizInteractivity.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<script src="js/comparison.js"></script>
     <!-- Jquery-2.2.4 JS -->
@@ -166,8 +253,6 @@
     <script src="js/footer-reveal.min.js"></script>
     <!-- Active JS -->
     <script src="js/active.js"></script>
-    
-    <script type="text/javascript" src="../js/quizFunctions.js"></script>
 </body>
 
 </html>
