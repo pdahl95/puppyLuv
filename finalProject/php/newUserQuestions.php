@@ -5,13 +5,13 @@
     include '../dbConnection.php';
     $conn = getDatabaseConnection("puppyLyv");
     
-    if(isset($_GET['name'])){
-        $name = $_GET['name'];
+    if(isset($_GET['username'])){
+        $name = $_GET['username'];
         $q1 = $_GET['q1'];
         $q2 = $_GET['q2'];
-        $q3 = $_GET['q3'];
+        // $q3 = $_GET['q3'];
     
-        $sql= "INSERT INTO user_question (user_name, q1, q2, q3) VALUES ('$name', $q1', '$q2', '$q3');";
+        $sql= "INSERT INTO user_question (user_name, q1, q2, q3) VALUES ('$name', $q1', '$q2', '');";
         $preparing = $conn->prepare($sql);
         $response = $preparing->execute();
 
@@ -210,21 +210,14 @@
     <script>
         /* global $ */ 
         $("#submit").on("click", function(){
-            alert("test");
-            var name = $('#name').val();
-            var q1 = $('#q1').val();
-            var q2 = $('#q2').val();
-            // var q3 = $('#q3').val(); 
-            
              $.ajax({
                    type: "GET",
                    url: "newUserQuestions.php",
-                   dataType: "text",
+                   dataType: "json",
                    data: {
-                       'name': name,
-                       'q1': q1,
-                       'q2': q2,
-                    //   'q3': q3,
+                      'username': $("[name=username]").val(),
+                      'q1': $("[name=q1]").val(),
+                      'q2': $("[name=q2]").val()
                    },
                    success: function(data, status) {
                        console.log(data);

@@ -1,18 +1,18 @@
 <?php
 
-// session_start();
+session_start();
 
-// include '../dbConnection.php';
-// $conn = getDatabaseConnection("puppyLyv");
-// $numOfUser = "SELECT COUNT(*) FROM user_question;";
-// // print_r($numOfUser);
+include '../dbConnection.php';
+$conn = getDatabaseConnection("puppyLyv");
+$numOfUser = "SELECT COUNT(*) FROM user_login";
+// print_r($numOfUser);
 
-// $stmt = $conn->prepare($numOfUser); 
-// $stmt->execute();
-// $response = $stmt->fetchAll(PDO::FETCH_OBJ);
+$stmt = $conn->prepare($numOfUser); 
+$stmt->execute();
+$response = $stmt->fetchAll(PDO::FETCH_OBJ);
 
-// echo $response;
-// exit(0);
+echo $response;
+
 
 ?>
 
@@ -201,23 +201,29 @@
             <div class="stats"> Statistics <br> 
             <div class="stats_row">
               <div class="stats_column">
-                <div class="text"> Number of users </div>
+                <div class="text">  <br> 
+                <img src="img/chart.png"></img>
                 
-                
-                
+                </div>
               </div>
               <div class="stats_column">
-                <div class="text"> Number of breeds </div>
+                <div class="text">  <br> 
+                <img src="img/Age.png"></img>
+                
+                
+                </div>
               </div>
               <div class="stats_column">
-                <div class="text"> Average age of users </div>
+                <div class="text">  <br> 
+                
+                
+                </div>
               </div>
             </div>
             
-            
-            
-            
             </div>
+            
+            <br><br>
             
             <a name="add"></a>
             <div class="location"> Add User <br>
@@ -286,6 +292,8 @@
     <script src="../js/active.js"></script>
     
     <script>
+    
+    
     
     /* global $ */
          $(document).ready(function(){
