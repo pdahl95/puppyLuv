@@ -2,6 +2,7 @@
 session_start();
 
 include '../dbConnection.php';
+include '../../../chromephp/ChromePhp.php';
 $conn = getDatabaseConnection("puppyLyv");
 
 if(isset($_POST['username'])){
@@ -9,24 +10,24 @@ if(isset($_POST['username'])){
     $password = sha1($_POST['password']);
     
     $queryAdmin = "SELECT * FROM admin WHERE username = '$username' and password='$password';"; 
-    $queryUsers = "select * from user_login where username = $username and password=$password;"; 
+    $queryUsers = "SELECT * FROM user_login WHERE username = '$username' and password='$password';";
 
-    $stmt = $conn->prepare($queryAdmin); 
+    $stmt = $conn->prepare($queryUsers);
     $stmt->execute();
     $response = $stmt->fetch(PDO::FETCH_ASSOC);
     
-    print_r($resoponse);
     
-    if(sizeof($resoponse) > 0){
-        header("Location: adminDashboard.php");
+    if(count($resoponse) > 0){
+        header("Location: userDashboard.php");
         exit(0);
     }
     
-    $stmtP = $conn->prepare($queryUsers); 
+    $stmtP = $conn->prepare($queryAdmin); 
     $stmtP->execute();
     $responsePass = $stmtP->fetch(PDO::FETCH_ASSOC);
-    if(count($resoponse)>0){
-        header("Location: userDashboard.php");
+    
+    if(count($responsePass)>0){
+        header("Location: adminDashboard.php");
         exit(0);
     }
         

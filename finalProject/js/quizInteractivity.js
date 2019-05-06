@@ -112,32 +112,32 @@ function checkQThree() {
 //     }
 // }
 
-function checkFinalScore() {  
-  switch (score) {
-    case 4:
-    scoreDisplay.innerHTML = '<p>Correct! Well done! You got 100%!</p>';
-    finalScore.innerHTML = '<img src="https://image.ibb.co/kX5PoR/sparkles.png"><h3>' + score + '</h3>';
-    break;
+// function checkFinalScore() {  
+//   switch (score) {
+//     case 4:
+//     scoreDisplay.innerHTML = '<p>Correct! Well done! You got 100%!</p>';
+//     finalScore.innerHTML = '<img src="https://image.ibb.co/kX5PoR/sparkles.png"><h3>' + score + '</h3>';
+//     break;
 
-    case 3:
-    scoreDisplay.innerHTML = '<p>You completed the quiz with 75%!</p>';
-    finalScore.innerHTML = '<h3>' + score + '</h3>';
-    break;
+//     case 3:
+//     scoreDisplay.innerHTML = '<p>You completed the quiz with 75%!</p>';
+//     finalScore.innerHTML = '<h3>' + score + '</h3>';
+//     break;
 
-    case 2:
-    scoreDisplay.innerHTML = '<p>You could do better...</p>';
-    finalScore.innerHTML = '<h3>' + score + '</h3>';
-    break;
+//     case 2:
+//     scoreDisplay.innerHTML = '<p>You could do better...</p>';
+//     finalScore.innerHTML = '<h3>' + score + '</h3>';
+//     break;
 
-    case 1:
-    scoreDisplay.innerHTML = '<p>You could do better...</p>';
-    finalScore.innerHTML = '<h3>' + score + '</h3>';
-    break;
+//     case 1:
+//     scoreDisplay.innerHTML = '<p>You could do better...</p>';
+//     finalScore.innerHTML = '<h3>' + score + '</h3>';
+//     break;
 
-    case 0:
-    scoreDisplay.innerHTML = '<p>Zero!? Really?</p>';
-    finalScore.innerHTML = '<h3>' + score + '</h3>';
-    break;   
-  }
-}
+//     case 0:
+//     scoreDisplay.innerHTML = '<p>Zero!? Really?</p>';
+//     finalScore.innerHTML = '<h3>' + score + '</h3>';
+//     break;   
+//   }
+// }
 
