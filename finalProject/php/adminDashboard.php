@@ -208,7 +208,7 @@ echo $response;
               </div>
               <div class="stats_column">
                 <div class="text">  <br> 
-                <img src="img/Age.png"></img>
+                <img src="img/age1.png"></img>
                 
                 
                 </div>
