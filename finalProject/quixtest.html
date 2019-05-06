@@ -78,11 +78,11 @@
 <!--<section class="quiz-background-area">        -->
 <section id="container" class="slidein">
     <section id="titleSection">
-      <div id="myTitle">
+      <!--<div id="myTitle">-->
         <div class=welcome-quiz-text>Welcome to the PuppyLuv Quiz</div>
         <div class=welcome-quiz-text-summary>This quiz consists of three questions to match you to your ideal breed.</div>
-      </div>
-      <div id="score"></div>
+      <!--</div>-->
+      <!--<div id="score"></div>-->
     </section>
     <section id="quizSection">
         <!--<div v-if="!finishedQuiz">-->
@@ -135,7 +135,7 @@
 
         <!--<button onclick="checkQThree();">Submit Answer</button>-->
         	<div id="buttondiv">
-				<button v-on:click="finishedQuizFunction" onclick="checkQThree();" :disabled="!enableSubmit">Submit</button>
+				<button v-on:click="finishedQuizFunction"  :disabled="!enableSubmit">Submit</button>
 			</div>
       </div>
      </div>
@@ -155,7 +155,7 @@
 			</div>
 		</div>
         
-        <button id="resetButton" onclick="window.location.href=window.location.href">Play Again</button>
+        <!--<button id="resetButton" onclick="window.location.href=window.location.href">Play Again</button>-->
       </div>
       </div>
     </section>
@@ -165,62 +165,62 @@
   
   <!--///////////////// end of new quiz section //////////////////-->
 
- <!--	<div id="main">-->
-	<!--	<h1>Take the Quiz</h1>-->
-	<!--	<p>Take the quiz to find your perfect breed match!</p>-->
+ 	<div id="main">
+		<h1>Take the Quiz</h1>
+		<p>Take the quiz to find your perfect breed match!</p>
 
-	<!--	<div v-if="!finishedQuiz">-->
-	<!--		<div class="question">-->
-	<!--			<h5>Question 1</h5>-->
-	<!--			<div class="answers">-->
-	<!--				<p>How active are you?</p>-->
-	<!--				<form action="">-->
-	<!--				  <input type="radio" id="q0A" name="answer0" v-on:click="answeredQuestion(0,'A')"><label for="q0A">I run every morning.</label><br>-->
-	<!--				  <input type="radio" id="q0B" name="answer0" v-on:click="answeredQuestion(0,'B')"><label for="q0B">I exersice at least three times a week.</label><br>-->
-	<!--				  <input type="radio" id="q0C" name="answer0" v-on:click="answeredQuestion(0,'C')"><label for="q0C">I am more of a couch potato.</label>-->
-	<!--				</form>-->
-	<!--			</div>-->
-	<!--		</div>-->
-	<!--		<div class="question">-->
-	<!--			<h5>Question 2</h5>-->
-	<!--			<div class="answers">-->
-	<!--				<p>Which of the following best describes your housing arrangement?</p>-->
-	<!--				<form action="">-->
-	<!--				  <input type="radio" id="q1A" name="answer1" v-on:click="answeredQuestion(1,'A')"><label for="q1A">Apartment</label><br>-->
-	<!--				  <input type="radio" id="q1B" name="answer1" v-on:click="answeredQuestion(1,'B')"><label for="q1B">Suburban house</label><br>-->
-	<!--				  <input type="radio" id="q1C" name="answer1" v-on:click="answeredQuestion(1,'C')"><label for="q1C">City living</label>-->
-	<!--				</form>-->
-	<!--			</div>-->
-	<!--		</div>-->
-	<!--		<div class="question">-->
-	<!--			<h5>Question 3</h5>-->
-	<!--			<div class="answers">-->
-	<!--				<p>What size dog are you seeking?</p>-->
-	<!--				<form action="">-->
-	<!--				  <input type="radio" id="q2A" name="answer2" v-on:click="answeredQuestion(2,'A')"><label for="q2A">Small and Sweet</label><br>-->
-	<!--				  <input type="radio" id="q2B" name="answer2" v-on:click="answeredQuestion(2,'A')"><label for="q2B">Medium and Meaty</label><br>-->
-	<!--				  <input type="radio" id="q2C" name="answer2" v-on:click="answeredQuestion(2,'A')"><label for="q2C">Lovely and Large</label>-->
-	<!--				</form>-->
-	<!--			</div>-->
-	<!--		</div>-->
-	<!--		<div id="buttondiv">-->
-	<!--			<button v-on:click="finishedQuizFunction" :disabled="!enableSubmit">Submit</button>-->
-	<!--		</div>-->
+		<div v-if="!finishedQuiz">
+			<div class="question">
+				<h5>Question 1</h5>
+				<div class="answers">
+					<p>How active are you?</p>
+					<form action="">
+					  <input type="radio" id="q0A" name="answer0" v-on:click="answeredQuestion(0,'A')"><label for="q0A">I run every morning.</label><br>
+					  <input type="radio" id="q0B" name="answer0" v-on:click="answeredQuestion(0,'B')"><label for="q0B">I exersice at least three times a week.</label><br>
+					  <input type="radio" id="q0C" name="answer0" v-on:click="answeredQuestion(0,'C')"><label for="q0C">I am more of a couch potato.</label>
+					</form>
+				</div>
+			</div>
+			<div class="question">
+				<h5>Question 2</h5>
+				<div class="answers">
+					<p>Which of the following best describes your housing arrangement?</p>
+					<form action="">
+					  <input type="radio" id="q1A" name="answer1" v-on:click="answeredQuestion(1,'A')"><label for="q1A">Apartment</label><br>
+					  <input type="radio" id="q1B" name="answer1" v-on:click="answeredQuestion(1,'B')"><label for="q1B">Suburban house</label><br>
+					  <input type="radio" id="q1C" name="answer1" v-on:click="answeredQuestion(1,'C')"><label for="q1C">City living</label>
+					</form>
+				</div>
+			</div>
+			<div class="question">
+				<h5>Question 3</h5>
+				<div class="answers">
+					<p>What size dog are you seeking?</p>
+					<form action="">
+					  <input type="radio" id="q2A" name="answer2" v-on:click="answeredQuestion(2,'A')"><label for="q2A">Small and Sweet</label><br>
+					  <input type="radio" id="q2B" name="answer2" v-on:click="answeredQuestion(2,'A')"><label for="q2B">Medium and Meaty</label><br>
+					  <input type="radio" id="q2C" name="answer2" v-on:click="answeredQuestion(2,'A')"><label for="q2C">Lovely and Large</label>
+					</form>
+				</div>
+			</div>
+			<div id="buttondiv">
+				<button v-on:click="finishedQuizFunction" :disabled="!enableSubmit">Submit</button>
+			</div>
 
-	<!--	</div>-->
-	<!--	<div v-else>-->
-	<!--		<div v-if="loadingResult">-->
-	<!--			<p>Loading...</p>-->
-	<!--		</div>-->
-	<!--		<div v-else>-->
-	<!--			<img v-bind:src="current.message"> <br>-->
-	<!--			<div id="takeagain">-->
-	<!--				<button v-on:click="again">Take again</button>-->
-	<!--			</div>-->
-	<!--		</div>-->
-	<!--	</div>-->
+		</div>
+		<div v-else>
+			<div v-if="loadingResult">
+				<p>Loading...</p>
+			</div>
+			<div v-else>
+				<img v-bind:src="current.message"> <br>
+				<div id="takeagain">
+					<button v-on:click="again">Take again</button>
+				</div>
+			</div>
+		</div>
 
-	<!--</div>-->
+	</div>
     </section>
     <!-- ***** Wellcome Area End ***** -->
     <!-- ***** Footer Area Start ***** -->
