@@ -291,6 +291,6 @@ class __TwigTemplate_22f9405c8bbe2fdd4e00c9a556ef72fbb3635367f22062f570260ee65c3
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "display/import/javascript.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/display/import/javascript.twig");
+        return new Twig_Source("", "display/import/javascript.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/display/import/javascript.twig");
     }
 }

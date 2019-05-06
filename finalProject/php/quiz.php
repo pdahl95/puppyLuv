@@ -1,3 +1,33 @@
+<?php
+
+//connection to the database
+
+    session_start();
+  include '../dbConnection.php';
+  
+  $conn = getDatabaseConnection("puppyLyv");
+   
+ 
+   
+   if(! $conn ) {
+      die('Could not connect: ' . mysql_error());
+   }
+   
+   $sql = 'SELECT * FROM breed_info';
+   $stmt= $conn->prepare($sql);
+   $stmt->execute();
+   $response = $stmt->fetchAll(PDO:: FETCH_ASSOC);
+   
+   echo json_encode($response);
+   
+   
+  
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,13 +42,20 @@
     <title> Quiz - PuppyLuv</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="../img/core-img/favicon.ico">
+    <link rel="icon" href="img/core-img/favicon.ico">
+    
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 
+    <!-- Quiz Styling -->
+    <!--<link href="css/quizStyling.css" rel="stylesheet">-->
     <!-- Core Stylesheet -->
-    <link href="../style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  
 
     <!-- Responsive CSS -->
-    <link href="../css/responsive.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+
 
 </head>
 
@@ -37,15 +74,15 @@
                     <div class="menu_area">
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <!-- Logo -->
-                            <img class="navbar-brand" src="../img/bg-img/doglogosm.png" alt="">
+                            <img class="navbar-brand" src="img/bg-img/doglogosm.png" alt="">
                             <a class="navbar-brand" href="#">Puppy Luv</a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                             <!-- Menu Area -->
                             <div class="collapse navbar-collapse" id="ca-navbar">
                                 <ul class="navbar-nav ml-auto" id="nav">
-                                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="quiz.php">Quiz</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="php/quiz.php">Quiz</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="php/login.php">Login</a></li>
                                 </ul>
                                 <div class="sing-up-button d-lg-none">
                                     <a href="newUserLogin.php">Sign Up Free</a>
@@ -64,61 +101,100 @@
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
-        <!-- ***** Wellcome Area Start ***** -->
+    <!-- ***** Wellcome Area Start ***** -->
     <section class="wellcome_areaIMAGEGRID clearfix" id="home">
+         <br><br><br>  <br><br><br>
+ <!--///////////////// start of new quiz section //////////////////-->
+<!--<section class="quiz-background-area">        -->
+<section id="container" class="slidein">
+    <section id="titleSection">
+      <div id="myTitle">
+        <div class=welcome-quiz-text>Welcome to the PuppyLuv Quiz</div>
+        <div class=welcome-quiz-text-summary>This quiz consists of three questions to match you to your ideal breed.</div>
+      </div>
+      <div id="score"></div>
+    </section>
+    <section id="quizSection">
+        <!--<div v-if="!finishedQuiz">-->
+      <div id="begin">
+        <button onclick="beginQuiz();">Begin the Quiz</button>
+      </div>
+       <!--start q1 test-->
+      <div id="main">
+      <!--start q1 actual-->
+      <div v-if="!finishedQuiz">
+      <div id="questionOne" class="fadein" class="question">
+        <h3>Question 1</h3>
+        <div class="answers">
+        <p>How active are you?</p>
+        <form action="">
+			<input type="radio" id="q0A"  name="answer0" v-on:click="answeredQuestion(0,'A')" onclick="checkQOne(event);"><label for="q0A">I run every morning.</label><br>
+			<input type="radio" id="q0B"  name="answer0" v-on:click="answeredQuestion(0,'B')" onclick="checkQOne(event);"><label for="q0B">I exersice at least three times a week.</label><br>
+			<input type="radio" id="q0C"  name="answer0" v-on:click="answeredQuestion(0,'C')" onclick="checkQOne(event);"><label for="q0C">I am more of a couch potato.</label>
+		</form>
+        <!--<button id="temp" onclick="checkQOne(event);">Temperature</button>-->
+        <!--<button id="windSpeed" onclick="checkQOne(event);">Wind Speed</button>-->
+        <!--<button id="AtmosPress" onclick="checkQOne(event);">Atmospheric Pressure</button>-->
+      </div>
+      </div>
+      <!--q2 test-->
+ 
+      <!--q2 actual-->
+      
+      <div id="questionTwo" class="fadein" class="question">
+        <h3>Question 2</h3>
+        <p>Which of the following best describes your housing arrangement?</p>
+        <div id="randomWeatherDisp"></div>
+        <div class="images">
+          <img src="img/house.png" alt="rainy day" id="rain" id="q1A" name="answer1" onclick="checkQTwo(event);" v-on:click="answeredQuestion(1,'A')"><label for="q1A"></label>
+          <img src="img/med-house.png" alt="wind farm" id="sun" id="q1B" name="answer1" onclick="checkQTwo(event);" v-on:click="answeredQuestion(1,'B')"><label for="q1B"></label>
+          <img src="img/apartment.png" alt="beautiful clouds" id="clouds" id="q1C" name="answer1" onclick="checkQTwo(event);" v-on:click="answeredQuestion(1,'C')"><label for="q1C"></label>
+        </div>
+      </div>
+      <!--question3 transition-->
+
+      <!--question 3 start-->
+      <div id="questionThree" class="fadein" class="question">
+        <h3>Question 3</h3>
+        <p>What size dog are you seeking?</p>
+        	<form action="">
+				<input type="radio" id="q2A" name="answer2" v-on:click="answeredQuestion(2,'A')"><label for="q2A">Small and Sweet</label><br>
+				<input type="radio" id="q2B" name="answer2" v-on:click="answeredQuestion(2,'A')"><label for="q2B">Medium and Meaty</label><br>
+				<input type="radio" id="q2C" name="answer2" v-on:click="answeredQuestion(2,'A')"><label for="q2C">Lovely and Large</label>
+			</form>
+
+        <!--<button onclick="checkQThree();">Submit Answer</button>-->
+        	<div id="buttondiv">
+				<button v-on:click="finishedQuizFunction" onclick="checkQThree();" :disabled="!enableSubmit">Submit</button>
+			</div>
+      </div>
+     </div>
+  
+      <div id="finish" class="fadein">
+        <!--<p>You've completed the quiz with a score of:</p>-->
+        <!--<div id="finalScore"></div>-->
+        <div v-else>
+			<div v-if="loadingResult">
+				<p>Loading...</p>
+			</div>
+			<div v-else>
+				<img v-bind:src="current.message"> <br>
+				<div id="takeagain">
+					<button v-on:click="again">Take again</button>
+				</div>
+			</div>
+		</div>
         
-        <!-- ***** Image Grid Start ***** -->
-        <br>
-       <div class="image_grid"> 
-       <div class="div_title_quiz"> 
-           <h2 class="quiz_title">  QUIZ </h2>
-           <h5> Please select 5 of your favorite dogs. </h5>
-       </div>
-       
-           <div class="row_img_grid">
-            <div class="column"> </div>
-            <div class="column"> </div>
-            <div class="column"> </div>
+        <button id="resetButton" onclick="window.location.href=window.location.href">Play Again</button>
+      </div>
+      </div>
+    </section>
+  </section>
 
-        </div>
-        <div class="row_img_grid">
-            <div class="column"> </div>
-            <div class="column"> </div>
-            <div class="column"> </div>
-        </div>
-        <div class="row_img_grid">
-            <div class="column"> </div>
-            <div class="column"> </div>
-            <div class="column"> </div>
-        </div>
-        <div class="row_img_grid">
-            <div class="column"> </div>
-            <div class="column"> </div>
-            <div class="column"> </div>
-        </div>
-        <div class="row_img_grid">
-            <div class="column"> </div>
-            <div class="column"> </div>
-            <div class="column"> </div>
-        </div>
-        <div class="row_img_grid">
-            <div class="column"> </div>
-            <div class="column"> </div>
-            <div class="column"> </div>
-        </div>
-         <div class="row_img_grid">
-            <div class="column"> </div>
-            <div class="column"> </div>
-            <div class="column"> </div>
-        </div>
-       </div>
-       
-       <!-- ***** Image Grid End ***** -->
-
+	<p>What size dog are you seeking?</p>-->
+	
     </section>
     <!-- ***** Wellcome Area End ***** -->
-    
-    
     <!-- ***** Footer Area Start ***** -->
     <footer class="footer-social-icon text-center section_padding_70 clearfix">
         <!-- footer logo -->
@@ -135,23 +211,29 @@
 
     </footer>
     <!-- ***** Footer Area Start ***** -->
-
+    <script src="js/quizInteractivity.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="js/comparison.js"></script>
     <!-- Jquery-2.2.4 JS -->
-    <script src="../js/jquery-2.2.4.min.js"></script>
+    <script src="js/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
-    <script src="../js/popper.min.js"></script>
+    <script src="js/popper.min.js"></script>
     <!-- Bootstrap-4 Beta JS -->
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <!-- All Plugins JS -->
-    <script src="../js/plugins.js"></script>
+    <script src="js/plugins.js"></script>
     <!-- Slick Slider Js-->
-    <script src="../js/slick.min.js"></script>
+    <script src="js/slick.min.js"></script>
     <!-- Footer Reveal JS -->
-    <script src="../js/footer-reveal.min.js"></script>
+    <script src="js/footer-reveal.min.js"></script>
     <!-- Active JS -->
-    <script src="../js/active.js"></script>
-    
-    <script type="text/javascript" src="../js/quizFunctions.js"></script>
+    <script src="js/active.js"></script>
 </body>
 
 </html>
+
+
+
+
+
+

@@ -1,4 +1,5 @@
 // JavaScript File
+
 $(document).ready(function() {
 
     $.ajax({
