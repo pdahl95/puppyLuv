@@ -36,7 +36,7 @@ function checkQOne(event) {
       } else {
         scoreDisplay.innerHTML = '<p>Sorry, wrong answer.<br>Score: ' + score + '</p>';
       }
- }
+}
 
 function checkQTwo(event) {
   var answerQTwo = event.target.id;
@@ -57,10 +57,10 @@ function checkQTwo(event) {
 function checkQThree() {
   
     var thirdQComplete = document.getElementById('questionThree');
-    var fourthQuestion = document.getElementById('questionFour');
+    // var fourthQuestion = document.getElementById('questionFour');
   
     thirdQComplete.style.display = 'none';
-    fourthQuestion.style.display = 'block';
+    // fourthQuestion.style.display = 'block';
   
     var checkBoxes = document.getElementsByName('q3');
     var answersQThree = [];
@@ -94,23 +94,23 @@ function checkQThree() {
         }
 }
 
-function checkQFour() {
-  var fourthInput = document.getElementById('stringOrNumber').value;
-  var fourthInputLower = fourthInput.toLowerCase();
-  var fourthQComplete = document.getElementById('questionFour');
-  var showFinal = document.getElementById('finish');
-  finalScore = document.getElementById('finalScore');
+// function checkQFour() {
+//   var fourthInput = document.getElementById('stringOrNumber').value;
+//   var fourthInputLower = fourthInput.toLowerCase();
+//   var fourthQComplete = document.getElementById('questionFour');
+//   var showFinal = document.getElementById('finish');
+//   finalScore = document.getElementById('finalScore');
   
-    fourthQComplete.style.display = 'none';
-    showFinal.style.display = 'block';
+//     fourthQComplete.style.display = 'none';
+//     showFinal.style.display = 'block';
   
-  if ((parseInt(fourthInput) === 4) || (fourthInputLower === 'four')) {
-    score++;
-    checkFinalScore();
-    } else {
-      checkFinalScore();
-    }
-}
+//   if ((parseInt(fourthInput) === 4) || (fourthInputLower === 'four')) {
+//     score++;
+//     checkFinalScore();
+//     } else {
+//       checkFinalScore();
+//     }
+// }
 
 function checkFinalScore() {  
   switch (score) {
