@@ -1,30 +1,40 @@
 <?php 
+if(!empty($_POST["register-user"])) {
+	/* Form Required Field Validation */
+	foreach($_POST as $key=>$value) {
+		if(empty($_POST[$key])) {
+		$error_message = "All Fields are required";
+		break;
+		}
+	}
+	/* Password Matching Validation */
+	if($_POST['password'] != $_POST['confirm_password']){ 
+	$error_message = 'Passwords should be same<br>'; 
+	}
 
- session_start();
- 
-   include '../dbConnection.php';
-   $conn = getDatabaseConnection("puppyLyv");
+	/* Email Validation */
+	if(!isset($error_message)) {
+		if (!filter_var($_POST["userEmail"], FILTER_VALIDATE_EMAIL)) {
+		$error_message = "Invalid Email Address";
+		}
+	}
 
-   if(isset($_GET['name'])){
-       
-       $name = $_GET['name'];
-       $email = $_GET['email'];
-       $password = $_GET['password'];
-       
-       
-       $sql = "INSERT INTO user_login (user_id, name, username, password) VALUES ('', '$name', '$email', '$password');";
-       $preparing = $conn->prepare($sql);
-       $response = $preparing->execute();
-
-       echo json_encode($response);
-       
-       //if you dont have an exist it wont stop properly
-       exit(0);
-       
-   }
-
-
-
+	if(!isset($error_message)) {
+		require_once("server.php");
+		$db_handle = new DBController();
+	    $query = "INSERT INTO user_login (name, username, password) VALUES
+		( '" . $_POST["firstName"] . "', '" . $_POST["userEmail"] . "','" . md5($_POST["password"]) . "')";
+		$result = $db_handle->insertQuery($query);
+		if(!empty($result)) {
+			$error_message = "";
+			$success_message = "You have registered successfully!";	
+			header('location: newUserQuestions.php');
+			unset($_POST);
+		} else {
+			$error_message = "Problem in registration. Try Again!";	
+		}
+	}
+}
 ?>
 
 <!DOCTYPE html>
@@ -55,6 +65,17 @@
     <!-- Responsive CSS -->
     <link href="../css/responsive.css" rel="stylesheet">
 
+<style>
+
+.success-message {
+	padding: 7px 10px;
+	background: #cae0c4;
+	border: #c3d0b5 1px solid;
+	color: #027506;
+	border-radius: 4px;
+}
+
+</style>
 </head>
 
 <body>
@@ -99,45 +120,44 @@
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
-    <!-- ***** Wellcome Area Start ***** -->
+    <!-- ***** Welcome Area Start ***** -->
     <section class="wellcome_area clearfix" id="home">
-        
-        
         <br><br><br><br><br><br>
         <div class="logMain">
-
-        <!-- Sign up form -->
+         <!--Sign up form start code-->
         <section class="signup">
-            <div class= "alert alert-error"><?$_SESSION['message'] ?></div>
+            <div class= "alert alert-error">
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Sign up</h2>
-                        <form method="POST" class="register-form" id="register-form" >
-                            <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Your Name" required />
-                            </div>
-                            <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Your Email" required/>
-                            </div>
-                            <div class="form-group">
-                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="password" id="password" placeholder="Password" required/>
-                            </div>
-                            <div class="form-group">
-                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="password" name="confirm_password" id="confirm_password" placeholder="Repeat your password" required/>
-                            </div>
-                            <div class="form-group">
-                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required />
-                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree to all statements in  <a href="#" class="term-service">Terms of service</a></label>
-                                  <span id="passwordValidation"> </span>
-                            </div>
-                            <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
-                            </div>
+                                <form name="frmRegistration" method="post" action="" class="register-form" id="register-form">
+                                    <?php if(!empty($success_message)) { ?>	
+                                    <div class="success-message"><?php if(isset($success_message)) echo $success_message; ?></div>
+                                    <?php } ?>
+                                    <?php if(!empty($error_message)) { ?>	
+                                    <div class="error-message"><?php if(isset($error_message)) echo $error_message; ?></div>
+                                    <?php } ?>
+                                        <div class="form-group">
+                                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                                <input type="text" class="demoInputBox" name="firstName" placeholder="First Name" value="<?php if(isset($_POST['firstName'])) echo $_POST['firstName']; ?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                            <input type="text" class="demoInputBox" name="userEmail" placeholder="Email" value="<?php if(isset($_POST['userEmail'])) echo $_POST['userEmail']; ?>">
+                                        </div>
+                                        <div class="form-group">
+                                                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                                                <input type="password" class="demoInputBox" name="password" placeholder="Password" value="">
+                                        </div>
+                                        <div class="form-group">
+                                                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                                                <input type="password" class="demoInputBox" name="confirm_password" placeholder="Confirm password" value="">
+                                        </div>
+                                        <div class="form-group form-button">
+                                                <input type="submit" name="register-user" id="signup" class="form-submit" value="Register" class="btnRegister">
+                <!--                            <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>-->
+                                        </div>
                         </form>
                     </div>
                     <div class="signup-image">
@@ -147,16 +167,9 @@
                 </div>
             </div>
         </section>
-        
         </div>
-        
-
     </section>
-    <!-- ***** Wellcome Area End ***** -->
-        
-        
-        
-    
+    <!-- ***** Welcome Area End ***** -->
     <!-- ***** Footer Area Start ***** -->
     <footer class="footer-social-icon text-center section_padding_70 clearfix">
         <!-- footer logo -->
@@ -195,49 +208,49 @@
     
     //ajax call
     
-    $('#signup').on('click',function(){
-        // alert("test");
-        // getting the value of parameters
+    // $('#signup').on('click',function(){
+    //     // alert("test");
+    //     // getting the value of parameters
         
-        var name= $('#name').val();
-        var email= $('#email').val();
-        var password= $('#password').val();
-        var password_2 =$('#password_2').val();
+    //     var name= $('#name').val();
+    //     var email= $('#email').val();
+    //     var password= $('#password').val();
+    //     var password_2 =$('#password_2').val();
         
-        if (password != password_2) {
-            $("#passwordValidation").html("Password does to match! Please retype password!").css({
-                "color": "red",
-                "font-size": "18px"
-            });
-        }else {
-            $.ajax({
-               type: "GET",
-               url: "newUserLogin.php",
-               dataType: "json",
-               data: {
-                   'name': name,
-                   'email': email,
-                   'password': password,
+    //     if (password != password_2) {
+    //         $("#passwordValidation").html("Password does to match! Please retype password!").css({
+    //             "color": "red",
+    //             "font-size": "18px"
+    //         });
+    //     }else {
+    //         $.ajax({
+    //           type: "GET",
+    //           url: "newUserLogin.php",
+    //           dataType: "json",
+    //           data: {
+    //               'name': name,
+    //               'email': email,
+    //               'password': password,
                    
-               },
-               success: function(data, status) {
-                   console.log(data);
-                    alert("Success");
-               },
-               error: function() {
-                    alert("Fail!");
-               }
-           });
-           window.location = "newUserQuestions.php";
-        }
+    //           },
+    //           success: function(data, status) {
+    //               console.log(data);
+    //                 alert("Success");
+    //           },
+    //           error: function() {
+    //                 alert("Fail!");
+    //           }
+    //       });
+    //       window.location = "newUserQuestions.php";
+    //     }
         
         
-        // ajax call will get the info from the signup page and send it my php file and query it into my database
+    //     // ajax call will get the info from the signup page and send it my php file and query it into my database
         
 
     
         
-    });
+    // });
     
     
     
