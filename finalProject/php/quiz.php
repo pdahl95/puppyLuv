@@ -22,8 +22,9 @@
     $question3 = $_POST['question3'];
     $question4 = $_POST['question4'];
     
-    $query = "SELECT * FROM breed_info WHERE size = '$question4', activity = '$question1', family_oriented ='$question3', in_vs_out = '$question2'
-    INNER JOIN dogs ON breed_info.breed = dogs.breed";
+    $query = "SELECT * FROM breed_info WHERE size = '$question4' AND activity = '$question1' AND family_oriented = '$question3' AND in_vs_out = '$question2';";
+    
+    // $query = "SELECT * FROM breed_info b INNER JOIN dogs d on b.breed = d.breed WHERE size = '$question4' AND activity = '$question1' AND family_oriented ='$question3' AND in_vs_out = '$question2';"; 
     
     $stmt= $conn->prepare($query); 
     $stmt->execute();
@@ -166,8 +167,8 @@
 				<div class="answers">
 					<p class="quizText">How active are you?</p>
 					<form action="">
-					  <input type="radio" id="q0A" name="answer0" value="1"><label for="q0A"> Active </label><br>
-					  <input type="radio" id="q0B" name="answer0" value="2"><label for="q0B"> Not Active </label><br>
+					  <input type="radio" id="q0A" name="answer0" value="1"><label for="q0A"> High </label><br>
+					  <input type="radio" id="q0B" name="answer0" value="2"><label for="q0B"> Low </label><br>
 					</form>
 				</div>
 			</div>
@@ -176,8 +177,8 @@
 				<div class="answers">
 					<p class="quizText">Would you like your Furry Friend to be an indoor friend or outdoor friend?</p>
 					<form action="">
-					  <input type="radio" id="q1A" name="answer1"><label for="q1A"> Indoor</label><br>
-					  <input type="radio" id="q1B" name="answer1"><label for="q1B"> Outdoor</label><br>
+					  <input type="radio" id="q1A" name="answer1"><label for="q1A"> indoor</label><br>
+					  <input type="radio" id="q1B" name="answer1"><label for="q1B"> outdoor</label><br>
 					  
 					</form>
 				</div>
@@ -187,8 +188,8 @@
 				<div class="answers">
 					<p class="quizText">Will your furry friends be around lots of people?</p>
 					<form action="">
-					  <input type="radio" id="q2A" name="answer2"><label for="q2A"> Yes </label><br>
-					  <input type="radio" id="q2B" name="answer2"><label for="q2B"> No </label><br>
+					  <input type="radio" id="q2A" name="answer2"><label for="q2A"> yes </label><br>
+					  <input type="radio" id="q2B" name="answer2"><label for="q2B"> no </label><br>
 					 
 					</form>
 				</div>
@@ -199,9 +200,9 @@
 				<div class="answers">
 					<p class="quizText">What size would you like your furry friend to be?</p>
 					<form action="">
-					  <input type="radio" id="q3A" name="answer3"><label for="q3A"> Small</label><br>
-					  <input type="radio" id="q3B" name="answer3"><label for="q3B"> Medium </label><br>
-					  <input type="radio" id="q3C" name="answer3"><label for="q3C"> Large </label><br>
+					  <input type="radio" id="q3A" name="answer3"><label for="q3A"> small</label><br>
+					  <input type="radio" id="q3B" name="answer3"><label for="q3B"> medium </label><br>
+					  <input type="radio" id="q3C" name="answer3"><label for="q3C"> large </label><br>
 					 
 					</form>
 				</div>
