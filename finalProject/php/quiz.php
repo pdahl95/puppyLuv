@@ -1,3 +1,25 @@
+<?php
+
+//connection to the database
+
+  session_start();
+  include '../dbConnection.php';
+  
+  $conn = getDatabaseConnection("puppyLyv");
+   
+   if(! $conn ) {
+      die('Could not connect: ' . mysql_error());
+   }
+   
+   $sql = 'SELECT * FROM breed_info';
+   $stmt= $conn->prepare($sql);
+   $stmt->execute();
+   $response = $stmt->fetchAll(PDO:: FETCH_ASSOC);
+   
+   //echo json_encode($response);
+   
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,21 +34,23 @@
     <title> Quiz - PuppyLuv</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="../img/core-img/favicon.ico">
+    <!--<link rel="icon" href="../img/core-img/favicon.ico">-->
     
      <!-- Font Icon -->
-    <link rel="stylesheet" href="../fonts/material-icon/css/material-design-iconic-font.min.css">
+    <!--<link rel="stylesheet" href="../fonts/material-icon/css/material-design-iconic-font.min.css">-->
 
     <!-- Core Stylesheet -->
     
-    <link rel="stylesheet" href="../style.css" type="text/css" />
-    <link href="../css/signinStyle.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="../style.css" type="text/css" />-->
+    <!--<link href="../css/signinStyle.css" rel="stylesheet">-->
     
 
     <!-- Responsive CSS -->
-    <link href="../css/responsive.css" rel="stylesheet">
-
+    <!--<link href="../css/responsive.css" rel="stylesheet">-->
+    
+    
 </head>
+
 
 <body>
     <!-- Preloader Start -->
@@ -76,8 +100,87 @@
         
         <br><br><br><br><br><br>
         <div class="quiz">
+            
+            	<h1>Take the Quiz</h1>
+		<p>Take the quiz to find your perfect breed match!</p>
 
-         
+		<div v-if="!finishedQuiz">
+			<div class="question">
+				<h5>Question 1</h5>
+				<div class="answers">
+					<p>How active are you?</p>
+					<form action="">
+					  <input type="radio" id="q0A" name="answer0"><label for="q0A">Active</label><br>
+					  <input type="radio" id="q0B" name="answer0"><label for="q1A">Not Active</label><br>
+					</form>
+				</div>
+			</div>
+			<div class="question">
+				<h5>Question 2</h5>
+				<div class="answers">
+					<p>Would you like your Furry Friend to be an indoor friend or outdoor friend?</p>
+					<form action="">
+					  <input type="radio" id="q1A" name="answer1"><label for="q1A">Indoor</label><br>
+					  <input type="radio" id="q1B" name="answer1"><label for="q1A">Outdoor</label><br>
+					  
+					</form>
+				</div>
+			</div>
+			<div class="question">
+				<h5>Question 3</h5>
+				<div class="answers">
+					<p>Will furry friends be around lots of people?</p>
+					<form action="">
+					  <input type="radio" id="q2A" name="answer2"><label for="q2A">Yes </label><br>
+					  <input type="radio" id="q2B" name="answer2"><label for="q2B">No </label><br>
+					 
+					</form>
+				</div>
+			</div>
+			
+				<div class="question">
+				<h5>Question 4</h5>
+				<div class="answers">
+					<p>What size would you like your furry friend to be?</p>
+					<form action="">
+					  <input type="radio" id="q3A" name="answer3"><label for="q3A">Small</label><br>
+					  <input type="radio" id="q3B" name="answer3"><label for="q3B">Medium </label><br>
+					  <input type="radio" id="q3C" name="answer3"><label for="q3C">Large </label><br>
+					 
+					</form>
+				</div>
+			</div>
+			<div id="buttondiv">
+				<button id= "submit">Submit</button>
+			</div>
+
+		</div>
+		<div v-else>
+			<div v-if="loadingResult">
+				<!--<p>Loading...</p>-->
+			</div>
+			<div v-else>
+				<img v-bind:src="current.message"> <br>
+			</div>
+		</div>
+
+	</div>
+    </section>
+    <!-- ***** Wellcome Area End ***** -->
+    <!-- ***** Footer Area Start ***** -->
+    <footer class="footer-social-icon text-center section_padding_70 clearfix">
+        <!-- footer logo -->
+        <div class="footer-text">
+            <h2>Puppy Luv</h2>
+        </div>
+        <!-- social icon-->
+        <div class="footer-social-icon">
+            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="#"><i class="active fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+        </div>
+
         
         </div>
         
@@ -122,3 +225,19 @@
     <!-- Login JS -->
     <!--<script src="../vendor/jquery/jquery.min.js"></script>-->
     <script src="../js/main.js"></script>
+    
+    <!--<script src="../js/quizFuntions.js"></script>-->
+    
+    <script>
+        
+        var q1Answer;
+        var q2Answer;
+        var q3Answer;
+        var q4Answer;
+        
+        $("#submit").on("click", function(){
+            alert("test");
+        });
+        
+        
+    </script>
