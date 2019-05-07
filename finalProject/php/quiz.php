@@ -9,17 +9,41 @@
   }
   
   include '../dbConnection.php';
-  
   $conn = getDatabaseConnection("puppyLyv");
    
    if(! $conn ) {
       die('Could not connect: ' . mysql_error());
    }
    
-   $sql = 'SELECT * FROM breed_info';
-   $stmt= $conn->prepare($sql);
-   $stmt->execute();
-   $response = $stmt->fetchAll(PDO:: FETCH_ASSOC);
+    if (isset($_POST['submit'])){
+    
+    $question1 = $_POST['question1'];
+    $question2 = $_POST['question2'];
+    $question3 = $_POST['question3'];
+    $question4 = $_POST['question4'];
+    
+    $query = "SELECT * FROM breed_info WHERE size = '$question4', activity = '$question1', family_oriented ='$question3', in_vs_out = '$question2'
+    INNER JOIN dogs ON breed_info.breed = dogs.breed";
+    
+    $stmt= $conn->prepare($query); 
+    $stmt->execute();
+    $response = $stmt->fetchAll(PDO:: FETCH_ASSOC);
+   
+   echo json_encode($response);
+    
+    
+    exit(0);
+    
+  }
+   
+   
+   
+   
+   
+//   $sql = 'SELECT * FROM breed_info';
+//   $stmt= $conn->prepare($sql);
+//   $stmt->execute();
+//   $response = $stmt->fetchAll(PDO:: FETCH_ASSOC);
    
    //echo json_encode($response);
    
@@ -258,12 +282,7 @@
     <!--<script src="../js/quizFuntions.js"></script>-->
     
     <script>
-        
-        // var q1Answer1 = "Active";
-        // var q1Answer2 = " Not Active";
-        // var q2Answer;
-        // var q3Answer;
-        // var q4Answer;
+        /* global $ */ 
         
         $("#submit").on("click", function(){
             var selectedQuestion1 = $("input[name='answer0']:checked");
@@ -294,10 +313,25 @@
             
             console.log("q4:",selectedLabelHtml4);
             
-            
-            $.ajax({
-                
-            });
+            // Send the 4 varaibles to our php to get the rows with these values .... 
+              $.ajax({
+                   type: "POST", 
+                   url: "quiz.php",
+                   dataType: "json",
+                   data: { 
+                    'submit': '', 
+                    "question1": selectedLabelHtml1, 
+                    "question2": selectedLabelHtml2, 
+                    "question3": selectedLabelHtml3,
+                    "question4": selectedLabelHtml4, 
+                    },
+                   success: function(data,status){
+                       alert("Success!");
+                   }, 
+                   error: function (){
+                        alert("Fail!");
+                    }
+                }); 
             
             
         });
