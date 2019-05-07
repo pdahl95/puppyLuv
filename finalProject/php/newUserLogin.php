@@ -99,7 +99,7 @@ if(!empty($_POST["register-user"])) {
                             <!-- Menu Area -->
                             <div class="collapse navbar-collapse" id="ca-navbar">
                                 <ul class="navbar-nav ml-auto" id="nav">
-                                    <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
                                     <li class="nav-item"><a class="nav-link" href="quiz.php">Quiz</a></li>
                                     <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
                                 </ul>
@@ -156,9 +156,8 @@ if(!empty($_POST["register-user"])) {
                                         </div>
                                         <div class="form-group form-button">
                                                 <input type="submit" name="register-user" id="signup" class="form-submit" value="Register" class="btnRegister">
-                <!--                            <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>-->
                                         </div>
-                        </form>
+                                </form>
                     </div>
                     <div class="signup-image">
                         <figure><img src="../img/signUpUser.png" alt="sing up image"></figure>
@@ -204,62 +203,6 @@ if(!empty($_POST["register-user"])) {
     <!-- Login JS -->
     <!--<script src="../vendor/jquery/jquery.min.js"></script>-->
     <script src="../js/main.js"></script>
-    <script> 
-    
-    //ajax call
-    
-    // $('#signup').on('click',function(){
-    //     // alert("test");
-    //     // getting the value of parameters
-        
-    //     var name= $('#name').val();
-    //     var email= $('#email').val();
-    //     var password= $('#password').val();
-    //     var password_2 =$('#password_2').val();
-        
-    //     if (password != password_2) {
-    //         $("#passwordValidation").html("Password does to match! Please retype password!").css({
-    //             "color": "red",
-    //             "font-size": "18px"
-    //         });
-    //     }else {
-    //         $.ajax({
-    //           type: "GET",
-    //           url: "newUserLogin.php",
-    //           dataType: "json",
-    //           data: {
-    //               'name': name,
-    //               'email': email,
-    //               'password': password,
-                   
-    //           },
-    //           success: function(data, status) {
-    //               console.log(data);
-    //                 alert("Success");
-    //           },
-    //           error: function() {
-    //                 alert("Fail!");
-    //           }
-    //       });
-    //       window.location = "newUserQuestions.php";
-    //     }
-        
-        
-    //     // ajax call will get the info from the signup page and send it my php file and query it into my database
-        
-
-    
-        
-    // });
-    
-    
-    
-    
-    
-    
-    
-    
-    </script>
 </body>
 
 </html>
