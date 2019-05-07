@@ -3,7 +3,7 @@ class DBController {
 	private $host = "localhost";
 	private $user = "root";
 	private $password = "";
-	private $database = "puppyLyv";
+	private $database = "heroku_ceb4dc4fce00730";
 	private $conn;
 	
 	function __construct() {
