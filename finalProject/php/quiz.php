@@ -3,6 +3,11 @@
 //connection to the database
 
   session_start();
+  
+  if (!isset($_SESSION['user'])){
+    header('Location: login.php');
+  }
+  
   include '../dbConnection.php';
   
   $conn = getDatabaseConnection("puppyLyv");
@@ -33,20 +38,47 @@
     <!-- Title -->
     <title> Quiz - PuppyLuv</title>
 
-    <!-- Favicon -->
-    <!--<link rel="icon" href="../img/core-img/favicon.ico">-->
+     <!--Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
     
      <!-- Font Icon -->
-    <!--<link rel="stylesheet" href="../fonts/material-icon/css/material-design-iconic-font.min.css">-->
+    <link rel="stylesheet" href="../fonts/material-icon/css/material-design-iconic-font.min.css">
 
     <!-- Core Stylesheet -->
     
-    <!--<link rel="stylesheet" href="../style.css" type="text/css" />-->
+    <link rel="stylesheet" href="../style.css" type="text/css" />
     <!--<link href="../css/signinStyle.css" rel="stylesheet">-->
     
 
     <!-- Responsive CSS -->
-    <!--<link href="../css/responsive.css" rel="stylesheet">-->
+    <link href="../css/responsive.css" rel="stylesheet">
+    
+    <style type="text/css">
+        .quizText{
+            color: black;
+            font-size: 16px;
+            font-weight: 300;
+            margin-top: 0;
+        }
+        .quiz{
+            margin-left: 25%;
+            /*border: 1px solid;*/
+            width: 50%;
+            text-align: center;
+        }
+        .question{
+            /*border: 1px solid;*/
+            /*background-color: white;*/
+            padding: 10px;
+            margin-top: 10px;
+        }
+        h5, label{
+            font-weight: bolder;
+        }
+        label {
+          margin-left: 5px;
+        }
+    </style>
     
     
 </head>
@@ -68,17 +100,17 @@
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <!-- Logo -->
                             <img class="navbar-brand" src="../img/bg-img/doglogosm.png" alt="">
-                            <a class="navbar-brand" href="#">Puppy Luv</a>
+                            <a class="navbar-brand" href="../index.php">Puppy Luv</a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                             <!-- Menu Area -->
                             <div class="collapse navbar-collapse" id="ca-navbar">
                                 <ul class="navbar-nav ml-auto" id="nav">
-                                    <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="quiz.php">Quiz</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
+                                    <!--<li class="nav-item "><a class="nav-link" href="/puppyLuv/finalProject/index.html">Home</a></li>-->
+                                    <!--<li class="nav-item"><a class="nav-link" href="quiz.php">Quiz</a></li>-->
+                                    <!--<li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>-->
                                 </ul>
                                 <div class="sing-up-button d-lg-none">
-                                    <a href="newUserLogin.php">Sign Up Free</a>
+                                    <!--<a href="newUserLogin.php">Sign Up Free</a>-->
                                 </div>
                             </div>
                         </nav>
@@ -87,7 +119,7 @@
                 <!-- Signup btn -->
                 <div class="col-12 col-lg-2">
                     <div class="sing-up-button d-none d-lg-block">
-                        <a href="newUserLogin.php">Sign Up Free</a>
+                        <!--<a href="newUserLogin.php">Sign Up Free</a>-->
                     </div>
                 </div>
             </div>
@@ -98,30 +130,30 @@
     <section class="wellcome_area clearfix" id="home">
         
         
-        <br><br><br><br><br><br>
+        <br><br><br>
         <div class="quiz">
             
             	<h1>Take the Quiz</h1>
-		<p>Take the quiz to find your perfect breed match!</p>
+		<p class="quizText">Take the quiz to find your perfect breed match!</p>
 
 		<div v-if="!finishedQuiz">
 			<div class="question">
 				<h5>Question 1</h5>
 				<div class="answers">
-					<p>How active are you?</p>
+					<p class="quizText">How active are you?</p>
 					<form action="">
-					  <input type="radio" id="q0A" name="answer0"><label for="q0A">Active</label><br>
-					  <input type="radio" id="q0B" name="answer0"><label for="q1A">Not Active</label><br>
+					  <input type="radio" id="q0A" name="answer0" value="1"><label for="q0A"> Active </label><br>
+					  <input type="radio" id="q0B" name="answer0" value="2"><label for="q0B"> Not Active </label><br>
 					</form>
 				</div>
 			</div>
 			<div class="question">
 				<h5>Question 2</h5>
 				<div class="answers">
-					<p>Would you like your Furry Friend to be an indoor friend or outdoor friend?</p>
+					<p class="quizText">Would you like your Furry Friend to be an indoor friend or outdoor friend?</p>
 					<form action="">
-					  <input type="radio" id="q1A" name="answer1"><label for="q1A">Indoor</label><br>
-					  <input type="radio" id="q1B" name="answer1"><label for="q1A">Outdoor</label><br>
+					  <input type="radio" id="q1A" name="answer1"><label for="q1A"> Indoor</label><br>
+					  <input type="radio" id="q1B" name="answer1"><label for="q1B"> Outdoor</label><br>
 					  
 					</form>
 				</div>
@@ -129,10 +161,10 @@
 			<div class="question">
 				<h5>Question 3</h5>
 				<div class="answers">
-					<p>Will furry friends be around lots of people?</p>
+					<p class="quizText">Will your furry friends be around lots of people?</p>
 					<form action="">
-					  <input type="radio" id="q2A" name="answer2"><label for="q2A">Yes </label><br>
-					  <input type="radio" id="q2B" name="answer2"><label for="q2B">No </label><br>
+					  <input type="radio" id="q2A" name="answer2"><label for="q2A"> Yes </label><br>
+					  <input type="radio" id="q2B" name="answer2"><label for="q2B"> No </label><br>
 					 
 					</form>
 				</div>
@@ -141,28 +173,25 @@
 				<div class="question">
 				<h5>Question 4</h5>
 				<div class="answers">
-					<p>What size would you like your furry friend to be?</p>
+					<p class="quizText">What size would you like your furry friend to be?</p>
 					<form action="">
-					  <input type="radio" id="q3A" name="answer3"><label for="q3A">Small</label><br>
-					  <input type="radio" id="q3B" name="answer3"><label for="q3B">Medium </label><br>
-					  <input type="radio" id="q3C" name="answer3"><label for="q3C">Large </label><br>
+					  <input type="radio" id="q3A" name="answer3"><label for="q3A"> Small</label><br>
+					  <input type="radio" id="q3B" name="answer3"><label for="q3B"> Medium </label><br>
+					  <input type="radio" id="q3C" name="answer3"><label for="q3C"> Large </label><br>
 					 
 					</form>
 				</div>
 			</div>
 			<div id="buttondiv">
 				<button id= "submit">Submit</button>
+				
 			</div>
 
 		</div>
-		<div v-else>
-			<div v-if="loadingResult">
-				<!--<p>Loading...</p>-->
-			</div>
-			<div v-else>
-				<img v-bind:src="current.message"> <br>
-			</div>
-		</div>
+		<br><br><br><br><br><br>
+				<br><br><br>
+				<br><br><br>
+	
 
 	</div>
     </section>
@@ -230,13 +259,47 @@
     
     <script>
         
-        var q1Answer;
-        var q2Answer;
-        var q3Answer;
-        var q4Answer;
+        // var q1Answer1 = "Active";
+        // var q1Answer2 = " Not Active";
+        // var q2Answer;
+        // var q3Answer;
+        // var q4Answer;
         
         $("#submit").on("click", function(){
-            alert("test");
+            var selectedQuestion1 = $("input[name='answer0']:checked");
+            var selectedQuestion1Value = selectedQuestion1.val();
+            var selectedRadioId1 = selectedQuestion1.attr("id");
+            var selectedLabelHtml1 = $("label[for='" + selectedRadioId1 + "']").html();
+            
+            console.log("q1:", selectedLabelHtml1);
+            
+            var selectedQuestion2 = $("input[name='answer1']:checked");
+            var selectedQuestion2Value = selectedQuestion2.val();
+            var selectedRadioId2 = selectedQuestion2.attr("id");
+            var selectedLabelHtml2 = $("label[for='" + selectedRadioId2 + "']").html();
+            
+            console.log("q2:",selectedLabelHtml2);
+            
+            var selectedQuestion3 = $("input[name='answer2']:checked");
+            var selectedQuestion3Value = selectedQuestion3.val();
+            var selectedRadioId3 = selectedQuestion3.attr("id");
+            var selectedLabelHtml3 = $("label[for='" + selectedRadioId3 + "']").html();
+            
+            console.log("q3:",selectedLabelHtml3);
+            
+            var selectedQuestion4 = $("input[name='answer3']:checked");
+            var selectedQuestion4Value = selectedQuestion4.val();
+            var selectedRadioId4 = selectedQuestion4.attr("id");
+            var selectedLabelHtml4 = $("label[for='" + selectedRadioId4 + "']").html();
+            
+            console.log("q4:",selectedLabelHtml4);
+            
+            
+            $.ajax({
+                
+            });
+            
+            
         });
         
         

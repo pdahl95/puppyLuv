@@ -11,7 +11,8 @@ $stmt = $conn->prepare($numOfUser);
 $stmt->execute();
 $response = $stmt->fetchAll(PDO::FETCH_OBJ);
 
-echo $response;
+// echo json_encode($response); Number of user of this app 
+
 
 
 ?>
@@ -298,7 +299,7 @@ echo $response;
     /* global $ */
          $(document).ready(function(){
             $(".logout").on("click", function(){
-                window.location = "../index.html";
+                window.location = "../index.php";
             });
             
             $.ajax({

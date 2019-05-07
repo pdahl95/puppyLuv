@@ -1,32 +1,36 @@
 <?php
 session_start();
-
+echo $_SESSION["user"];
 include '../dbConnection.php';
-include '../../../chromephp/ChromePhp.php';
 $conn = getDatabaseConnection("puppyLyv");
+if(isset($_SESSION["user"])){
+    header("Location: ../index.php");
+}
 
 if(isset($_POST['username'])){
     $username = $_POST['username'];
     $password = sha1($_POST['password']);
-    
     $queryAdmin = "SELECT * FROM admin WHERE username = '$username' and password='$password';"; 
     $queryUsers = "SELECT * FROM user_login WHERE username = '$username' and password='$password';";
 
     $stmt = $conn->prepare($queryUsers);
     $stmt->execute();
     $response = $stmt->fetch(PDO::FETCH_ASSOC);
+    echo count($response);
     
-    
-    if(count($resoponse) > 0){
+    if($response!=false && count($response) > 0){
+        echo "I am here!";
+        $_SESSION["user"] = "$username";
         header("Location: userDashboard.php");
         exit(0);
     }
     
-    $stmtP = $conn->prepare($queryAdmin); 
-    $stmtP->execute();
-    $responsePass = $stmtP->fetch(PDO::FETCH_ASSOC);
-    
-    if(count($responsePass)>0){
+    $stmt = $conn->prepare($queryAdmin); 
+    $stmt->execute();
+    $response = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if($response!=false && count($response)>0){
+        $_SESSION["user"] = "$username";
         header("Location: adminDashboard.php");
         exit(0);
     }
@@ -87,7 +91,7 @@ if(isset($_POST['username'])){
                             <!-- Menu Area -->
                             <div class="collapse navbar-collapse" id="ca-navbar">
                                 <ul class="navbar-nav ml-auto" id="nav">
-                                    <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                                    <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
                                     <li class="nav-item"><a class="nav-link" href="quiz.php">Quiz</a></li>
                                     <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
                                 </ul>
@@ -205,13 +209,10 @@ if(isset($_POST['username'])){
     /*global $*/
     
     $('#signin').on('click',function(){
-        //  alert("test");
-        // getting the value of parameters
         
         var username= $('#username').val();
         var password= $('#password').val();
         // ajax call will get the info from the signup page and send it my php file and query it into my database
-        
         $.ajax({
           type: "POST",
           url: "login.php",
@@ -222,26 +223,20 @@ if(isset($_POST['username'])){
               'password': password
           },
           success: function(data, status) {
-              console.log(data);
-                alert("Success");
+              console.log("successfuly logged in");
           },
           error: function(xhr, status, errorThrown) {
-                $('#result').html('<p>status code: '+jqXHR.status+'</p><p>errorThrown: ' + errorThrown + '</p><p>jqXHR.responseText:</p><div>'+jqXHR.responseText + '</div>');
-                console.log('jqXHR:');
-                console.log(jqXHR);
+                $('#result').html('<p>status code: '+xhr.status+'</p><p>errorThrown: ' + errorThrown + '</p><p>xhr.responseText:</p><div>'+xhr.responseText + '</div>');
+                console.log('xhr:');
+                console.log(xhr);
                 console.log('textStatus:');
-                console.log(textStatus);
+                console.log(status);
                 console.log('errorThrown:');
                 console.log(errorThrown);
           }
       });
-    
-        
     });
-
-    
     </script>
 </body>
-
 </html>
 
