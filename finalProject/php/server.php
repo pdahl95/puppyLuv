@@ -1,9 +1,10 @@
 <?php 
 class DBController {
+	
 	private $host = "localhost";
 	private $user = "root";
 	private $password = "";
-	private $database = "heroku_ceb4dc4fce00730";
+	private $database = "puppyLyv";
 	private $conn;
 	
 	function __construct() {
@@ -11,6 +12,13 @@ class DBController {
 	}
 	
 	function connectDB() {
+		    if  (strpos($_SERVER['HTTP_HOST'], 'herokuapp') !== false) {
+		        $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+		        $host = $url["host"];
+		        $dbname = substr($url["path"], 1);
+		        $username = $url["user"];
+		        $password = $url["pass"];
+		    } 
 		$conn = mysqli_connect($this->host,$this->user,$this->password,$this->database);
 		return $conn;
 	}
