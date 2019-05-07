@@ -15,39 +15,28 @@
       die('Could not connect: ' . mysql_error());
    }
    
-    if (isset($_POST['submit'])){
+    if (isset($_GET['question1'])){
     
-    $question1 = $_POST['question1'];
-    $question2 = $_POST['question2'];
-    $question3 = $_POST['question3'];
-    $question4 = $_POST['question4'];
+    $question1 = $_GET['question1'];
+    $question2 = $_GET['question2'];
+    $question3 = $_GET['question3'];
+    $question4 = $_GET['question4'];
     
-    $query = "SELECT * FROM breed_info WHERE size = '$question4' AND activity = '$question1' AND family_oriented = '$question3' AND in_vs_out = '$question2';";
+    // $query = "SELECT * FROM breed_info WHERE size = '';";
     
-    // $query = "SELECT * FROM breed_info b INNER JOIN dogs d on b.breed = d.breed WHERE size = '$question4' AND activity = '$question1' AND family_oriented ='$question3' AND in_vs_out = '$question2';"; 
+    $query = "SELECT * FROM breed_info b INNER JOIN dogs d on b.breed = d.breed WHERE size = '$question4' AND activity = '$question1' AND family_oriented ='$question3' AND in_vs_out = '$question2';"; 
     
     $stmt= $conn->prepare($query); 
     $stmt->execute();
     $response = $stmt->fetchAll(PDO:: FETCH_ASSOC);
    
-   echo json_encode($response);
+    echo json_encode($response);
     
     
     exit(0);
     
   }
-   
-   
-   
-   
-   
-//   $sql = 'SELECT * FROM breed_info';
-//   $stmt= $conn->prepare($sql);
-//   $stmt->execute();
-//   $response = $stmt->fetchAll(PDO:: FETCH_ASSOC);
-   
-   //echo json_encode($response);
-   
+  
 ?>
 
 <!DOCTYPE html>
@@ -316,15 +305,14 @@
             
             // Send the 4 varaibles to our php to get the rows with these values .... 
               $.ajax({
-                   type: "POST", 
+                   type: "GET", 
                    url: "quiz.php",
                    dataType: "json",
                    data: { 
-                    'submit': '', 
-                    "question1": selectedLabelHtml1, 
-                    "question2": selectedLabelHtml2, 
-                    "question3": selectedLabelHtml3,
-                    "question4": selectedLabelHtml4, 
+                    "question1": selectedLabelHtml1.trim(), 
+                    "question2": selectedLabelHtml2.trim(), 
+                    "question3": selectedLabelHtml3.trim(),
+                    "question4": selectedLabelHtml4.trim() 
                     },
                    success: function(data,status){
                        alert("Success!");
