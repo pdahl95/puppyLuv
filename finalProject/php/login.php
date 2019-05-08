@@ -86,12 +86,12 @@ if(isset($_POST['username'])){
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <!-- Logo -->
                             <img class="navbar-brand" src="../img/bg-img/doglogosm.png" alt="">
-                            <a class="navbar-brand" href="#">Puppy Luv</a>
+                            <a class="navbar-brand" href="../index.php">Puppy Luv</a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                             <!-- Menu Area -->
                             <div class="collapse navbar-collapse" id="ca-navbar">
                                 <ul class="navbar-nav ml-auto" id="nav">
-                                    <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
+                                    <li class="nav-item active"><a class="nav-link" href="../index.php">Home</a></li>
                                     <li class="nav-item"><a class="nav-link" href="quiz.php">Quiz</a></li>
                                     <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
                                 </ul>
@@ -141,18 +141,16 @@ if(isset($_POST['username'])){
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
-                                <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                                <!--<label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>-->
                             </div>
                             <div class="form-group form-button">
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Login"/>
                             </div>
                         </form>
                         <div class="social-login">
-                            <span class="social-label">Or login with</span>
+                           
                             <ul class="socials">
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                              
                             </ul>
                         </div>
                     </div>
