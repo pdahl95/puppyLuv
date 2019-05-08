@@ -454,7 +454,8 @@ p {
 
 .welcome-thumb img {
     height: auto;
-    width: 100%;
+    width: 79%;
+    padding-bottom: 140px;
 }
 
 .wellcome-heading>h2 {
