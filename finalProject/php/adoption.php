@@ -1,76 +1,66 @@
-
 <!DOCTYPE html>
 <html>
 	<head>
 	</head>
 	<body>
-		<form>
-				<legend> Find A Cat Near You! </legend>
-				<label for="zip">Zip</label>
-				<input type="text" name="zip" id="zip">
-				<input type="submit" id="submitZip">
-		</form>
+	<div> Find A Dog Near You! </div>
+	<label for="zip">Zip</label>
+	<input type="text" name="zip" id="zip">
+	<button id="submitBtn"> Search </button>
+	<div id='animalTable'></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+	/* global $ */ 
 		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<!--<script src='script.js'></script>-->
-		
-		<script>
-
-		var apiKey = 'tLNejqQtyf4nPkVnRxjofgH2rwlmkMfMILhMxKRu7d0CY2xdo9'; // assign our key to a variable, easier to read
-		
-		// the next line and function set up the button in our html to be clickable and reactive 
-		document.addEventListener('DOMContentLoaded', bindButtons);
-		
-		function bindButtons(){
-			document.getElementById('submitZip').addEventListener('click', function(event){
-				event.preventDefault();
-				var zip = document.getElementById('zip').value; // this line gets the zip code from the form entry
-			
-				
-				// Within $.ajax{...} is where we fill out our query 
-				$.ajax({
-				 type: "get",
-		          url: 'http://api.petfinder.com/pet.getRandom',
-		          dataType: "json",
-					data: {
-						key: apiKey,
-						animal: 'cat',
-						'location': zip,
-						output: 'basic',
-						format: 'json'
-					},
-					// Here is where we handle the response we got back from Petfinder
-					success: function( response ) {
-						console.log(response); // debugging
-						var catName = response.petfinder.pet.name.$t;
-						var img = response.petfinder.pet.media.photos.photo[0].$t;
-						var id = response.petfinder.pet.id.$t;
-		
-						var newName = document.createElement('a');
-						var newDiv = document.createElement('div');
-						newName.textContent = catName;
-						newName.href = 'https://www.petfinder.com/petdetail/' + id;
-		
-						var newImg = document.createElement('img');
-						newImg.src = img;
-						
-						var list = document.createElement("div");
-						list.setAttribute("id", "List");
-						document.body.appendChild(list);
-		
-						newDiv.appendChild(newName);
-						list.appendChild(newDiv);
-						list.appendChild(newImg);
-					}
-				});
-				})
-		
-		}
-
+		$("#submitBtn").on("click", function(){
+			var zipValue = $('[name=zip]').val();
+			// alert(zipValue);
+			$.ajax({
+				type:'POST', 
+				url: 'https://api.petfinder.com/v2/oauth2/token',
+				contentType: 'application/x-www-form-urlencoded',
+				data: {
+					'grant_type': 'client_credentials',
+					'client_id': 'tLNejqQtyf4nPkVnRxjofgH2rwlmkMfMILhMxKRu7d0CY2xdo9',
+					'client_secret':'7sxdhi7eE06PIGOEbu8Kx4FBW8qvC1VmhwIRz3el' 	
+				},
+				success: function(data){
+					console.log(data);
+					var token = data.access_token;
+					$.ajax({
+						type: "GET",
+						url: 'https://api.petfinder.com/v2/animals',
+						headers:{
+							'Authorization': 'Bearer ' + token 
+						},
+						data:{
+							'type': 'dog',
+							'location' : zipValue
+						},
+						success: function(data){
+						    $('#animalTable').html("<p>Linkes to adpoption locations:</p>");
+							$.each( data.animals, function( index, animal ) {
+                                    $('#animalTable').append("<a target='_blank' href='"+animal.url+"'>"+ "Location" + ":" + index + "</a>");
+                                    $('#animalTable').append("<br>");
+                            });
+							    
+							
+						},
+						error: function(){
+						    alert("error");
+						}
+					});
+				},
+				error: function(){
+				    alert("error");
+					
+				}
+			});
+	});
+	
 </script>
 
-		
-		
+
 	</body>
 </html>
 
