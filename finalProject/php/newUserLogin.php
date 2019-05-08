@@ -1,12 +1,16 @@
 <?php 
+
+		include '../dbConnection.php';
+        $dbname = getDatabaseConnection("puppyLyv");
+        
 if(!empty($_POST["register-user"])) {
 	/* Form Required Field Validation */
-	foreach($_POST as $key=>$value) {
-		if(empty($_POST[$key])) {
-		$error_message = "All Fields are required";
-		break;
-		}
-	}
+// 	foreach($_POST as $key=>$value) {
+// 		if(empty($_POST[$key])) {
+// 		$error_message = "All Fields are required";
+// 		break;
+// 		}
+// 	}
 	/* Password Matching Validation */
 	if($_POST['password'] != $_POST['confirm_password']){ 
 	$error_message = 'Passwords should be same<br>'; 
@@ -20,19 +24,23 @@ if(!empty($_POST["register-user"])) {
 	}
 
 	if(!isset($error_message)) {
-		require_once("server.php");
-		$db_handle = new DBController();
-	    $query = "INSERT INTO user_login (name, username, password) VALUES
+// 		require_once("server.php");
+
+// 		$db_handle = new DBController();
+	    $sql = "INSERT INTO user_login (name, username, password) VALUES
 		( '" . $_POST["firstName"] . "', '" . $_POST["userEmail"] . "','" . md5($_POST["password"]) . "')";
-		$result = $db_handle->insertQuery($query);
-		if(!empty($result)) {
-			$error_message = "";
+		
+// 		$stmt= $conn->prepare($query); 
+        $stmt = $dbname->prepare($sql);
+        $stmt->execute($np);
+// echo "New Product was added!";
+		
+
+// 			$error_message = "";
 			$success_message = "You have registered successfully!";	
 			header('location: newUserQuestions.php');
 			unset($_POST);
-		} else {
-			$error_message = "Problem in registration. Try Again!";	
-		}
+		
 	}
 }
 ?>
@@ -99,7 +107,7 @@ if(!empty($_POST["register-user"])) {
                             <!-- Menu Area -->
                             <div class="collapse navbar-collapse" id="ca-navbar">
                                 <ul class="navbar-nav ml-auto" id="nav">
-                                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="../index.php">Home</a></li>
                                     <li class="nav-item"><a class="nav-link" href="quiz.php">Quiz</a></li>
                                     <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
                                 </ul>

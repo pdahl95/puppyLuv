@@ -50,7 +50,7 @@ if(isset($_SESSION['user'])){
                             <!-- Menu Area -->
                             <div class="collapse navbar-collapse" id="ca-navbar">
                                 <ul class="navbar-nav ml-auto" id="nav">
-                                    <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                                    <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
                                     <li class="nav-item"><a class="nav-link" href="php/quiz.php">Quiz</a></li>
                                     <li class="nav-item"><a class="nav-link" id="loginButton" href="php/login.php">Login</a></li>
                                 </ul>
