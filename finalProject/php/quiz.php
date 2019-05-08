@@ -32,10 +32,13 @@
    
     echo json_encode($response);
     
+    $_SESSION['dogImages'] = $response;
+    
     
     exit(0);
     
   }
+  
   
 ?>
 
@@ -209,31 +212,6 @@
 
 	</div>
     </section>
-    <!-- ***** Wellcome Area End ***** -->
-    <!-- ***** Footer Area Start ***** -->
-    <footer class="footer-social-icon text-center section_padding_70 clearfix">
-        <!-- footer logo -->
-        <div class="footer-text">
-            <h2>Puppy Luv</h2>
-        </div>
-        <!-- social icon-->
-        <div class="footer-social-icon">
-            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a href="#"><i class="active fa fa-twitter" aria-hidden="true"></i></a>
-            <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-        </div>
-
-        
-        </div>
-        
-
-    </section>
-    <!-- ***** Wellcome Area End ***** -->
-        
-        
-        
-    
     <!-- ***** Footer Area Start ***** -->
     <footer class="footer-social-icon text-center section_padding_70 clearfix">
         <!-- footer logo -->
@@ -316,6 +294,8 @@
                     },
                    success: function(data,status){
                        alert("Success!");
+                       console.log(data);
+                       window.location = 'results.php';
                    }, 
                    error: function (){
                         alert("Fail!");
@@ -323,7 +303,10 @@
                 }); 
             
             
+            
         });
         
         
     </script>
+</body>
+</html>
