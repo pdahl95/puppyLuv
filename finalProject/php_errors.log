@@ -102,3 +102,41 @@ Stack trace:
 [07-May-2019 01:34:46 UTC] PHP Stack trace:
 [07-May-2019 01:34:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:0
 [07-May-2019 01:34:46 UTC] PHP   2. mysqli_connect() /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:5
+[08-May-2019 01:36:02 UTC] PHP Warning:  mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 7
+[08-May-2019 01:36:02 UTC] PHP Stack trace:
+[08-May-2019 01:36:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:0
+[08-May-2019 01:36:02 UTC] PHP   2. mysqli_connect() /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:7
+[08-May-2019 01:36:02 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 7
+[08-May-2019 01:36:02 UTC] PHP Stack trace:
+[08-May-2019 01:36:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:0
+[08-May-2019 01:36:02 UTC] PHP   2. mysqli_connect() /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:7
+[08-May-2019 01:36:22 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'54.175.48.207' (using password: NO) in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 7
+[08-May-2019 01:36:22 UTC] PHP Stack trace:
+[08-May-2019 01:36:22 UTC] PHP   1. {main}() /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:0
+[08-May-2019 01:36:22 UTC] PHP   2. mysqli_connect() /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:7
+[08-May-2019 01:47:13 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 292
+[08-May-2019 01:48:51 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 285
+[08-May-2019 01:49:59 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 247
+[08-May-2019 01:50:01 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 247
+[08-May-2019 01:54:10 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:29
+Stack trace:
+#0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(29): PDOStatement->fetchAll(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 29
+[08-May-2019 01:57:11 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:30
+Stack trace:
+#0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(30): PDOStatement->fetchAll(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 30
+[08-May-2019 02:17:51 UTC] PHP Fatal error:  Call to undefined function startConnection() in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 5
+[08-May-2019 02:17:51 UTC] PHP Stack trace:
+[08-May-2019 02:17:51 UTC] PHP   1. {main}() /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:0
+[08-May-2019 02:23:33 UTC] PHP Fatal error:  Call to undefined function startConnection() in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 5
+[08-May-2019 02:23:33 UTC] PHP Stack trace:
+[08-May-2019 02:23:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:0
+[08-May-2019 02:23:36 UTC] PHP Fatal error:  Call to undefined function startConnection() in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 5
+[08-May-2019 02:23:36 UTC] PHP Stack trace:
+[08-May-2019 02:23:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:0
+[08-May-2019 02:24:34 UTC] PHP Fatal error:  Call to undefined function validateSession() in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 6
+[08-May-2019 02:24:34 UTC] PHP Stack trace:
+[08-May-2019 02:24:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:0

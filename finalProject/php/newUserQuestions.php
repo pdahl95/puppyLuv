@@ -1,71 +1,32 @@
 <?php
+session_start();
 
-/* Attempt MySQL server connection. Assuming you are running MySQL
-server with default setting (user 'root' with no password) */
 include '../dbConnection.php';
 $dbConn = getDatabaseConnection("puppyLyv");
-$link = mysqli_connect("localhost", "root", "");
- 
-// Check connection
-if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
+//validateSession();
+
+if (isset($_GET['submit'])) { //checks whether the form was submitted
+    
+    $user_name = $_GET['user_name'];
+    $q1 =  $_GET['q1'];
+    $q2 =  $_GET['q2'];
+    $q3 =  $_GET['q3'];
+    
+    
+    $sql = "INSERT INTO user_question (user_name, q1, q2, q3) 
+            VALUES (:user_name, :q1, :q2, :q3);";
+    $np = array();
+    $np[":user_name"] = $user_name;
+    $np[":q1"] = $q1;
+    $np[":q2"] = $q2;
+    $np[":q3"] = $q3;
+    
+    $stmt = $dbConn->prepare($sql);
+    $stmt->execute($np);
+    echo "New Product was added!";
+    
 }
- 
-// Escape user inputs for security
-$user_name = mysqli_real_escape_string($link, $_REQUEST['user_name']);
-$q1 = mysqli_real_escape_string($link, $_REQUEST['q1']);
-$q2 = mysqli_real_escape_string($link, $_REQUEST['q2']);
-$q3 = mysqli_real_escape_string($link, $_REQUEST['q3']);
- 
-// Attempt insert query execution
-$sql = "INSERT INTO user_question (user_name, q1, q2, q3) VALUES ('$username', '$q1', '$q2', '$q3')";
-if(mysqli_query($link, $sql)){
-    echo "Records added successfully.";
-} else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-}
- 
-// Close connection
-mysqli_close($link);
 
-
-
-	/* Password Matching Validation 
-	if($_POST['password'] != $_POST['confirm_password']){ 
-	$error_message = 'Passwords should be same<br>'; 
-	}
-	*/
-
-	/* Email Validation 
-	if(!isset($error_message)) {
-		if (!filter_var($_POST["userEmail"], FILTER_VALIDATE_EMAIL)) {
-		$error_message = "Invalid Email Address";
-		}
-	}
-    */
-
-    //  inserts answers from newUserQuestions.php
-    /*session_start();
-    
-    include '../dbConnection.php';
-    $conn = getDatabaseConnection("puppyLyv");
-    
-    if(isset($_GET['username'])){
-        $name = $_GET['username'];
-        $q1 = $_GET['q1'];
-        $q2 = $_GET['q2'];
-        $q3 = $_GET['q3'];
-    
-        $sql= "INSERT INTO user_question (user_name, q1, q2, q3) VALUES ('$name', $q1', '$q2', '$q3');";
-        $preparing = $conn->prepare($sql);
-        $response = $preparing->execute();
-
-        echo json_encode($response);
-       
-      //if you dont have an exit it wont stop properly
-      exit(0);
-} */
- 
 ?>
 
 <!DOCTYPE html>
@@ -178,9 +139,9 @@ mysqli_close($link);
                         <!--<form method="GET" class="register-form" id="login-form">-->
                             
                             
-                <form action="" method="post">
+                <form action="" method="GET">
                     
-                    Name: <input id="name" type="text" name="username" /> <br> 
+                    Name: <input id="name" type="text" name="user_name" /> <br> 
         
                     Age: <input id="q1" type="text" name="q1" /><br><br>
                     
@@ -194,7 +155,7 @@ mysqli_close($link);
         
          
                     <div class="form-group form-button">
-                        <button type="submit" id="submit"> Register </button>
+                        <button type="submit" name="submit" id="submit"> Register </button>
                     </div>
                             
                             
@@ -231,6 +192,10 @@ mysqli_close($link);
 
     </footer>
     <!-- ***** Footer Area Start ***** -->
+    
+    </body>
+
+</html>
 
     <!-- Jquery-2.2.4 JS -->
     <script src="../js/jquery-2.2.4.min.js"></script>
@@ -250,38 +215,3 @@ mysqli_close($link);
     <!--<script src="../vendor/jquery/jquery.min.js"></script>-->
     <script src="../js/main.js"></script>
     
-    <script>
-        /* global $ */ 
-      /*  $("#submit").on("click", function(){
-             $.ajax({
-                   type: "GET",
-                   url: "newUserQuestions.php",
-                   dataType: "json",
-                   data: {
-                      'username': $("[name=username]").val(),
-                      'q1': $("[name=q1]").val(),
-                      'q2': $("[name=q2]").val()
-                   },
-                   success: function(data, status) {
-                       console.log(data);
-                        alert("Success");
-                   },
-                   error: function() {
-                        alert("Fail!");
-                   }
-                   });
-        });  */
-       
-        
-    </script>
-    
-</body>
-
-</html>
-
-
-        
-        
-        
-        
-       
