@@ -16,7 +16,7 @@ if(isset($_POST['username'])){
     $stmt = $conn->prepare($queryUsers);
     $stmt->execute();
     $response = $stmt->fetch(PDO::FETCH_ASSOC);
-    echo count($response);
+    // echo count($response);
     
     if($response!=false && count($response) > 0){
         echo "I am here!";

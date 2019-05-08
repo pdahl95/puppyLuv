@@ -21,7 +21,7 @@ if(!empty($_POST["register-user"])) {
 	if(!isset($error_message)) {
 
 	    $sql = "INSERT INTO user_login (name, username, password) VALUES
-		( '" . $_POST["firstName"] . "', '" . $_POST["userEmail"] . "','" . md5($_POST["password"]) . "')";
+		( '" . $_POST["firstName"] . "', '" . $_POST["userEmail"] . "','" . sha1($_POST["password"]) . "')";
         $stmt = $dbname->prepare($sql);
         $stmt->execute($np);
 
