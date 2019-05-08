@@ -9,7 +9,7 @@ session_start();
   include '../dbConnection.php';
   $conn = getDatabaseConnection("puppyLyv");
   
-    $sql = "select *from breed_match ORDER BY user_id DESC LIMIT 1";
+    $sql = "select * from breed_match ORDER BY user_id DESC LIMIT 1";
     $stmt= $conn->prepare($sql); 
     $stmt->execute();
     $response = $stmt->fetchAll(PDO:: FETCH_ASSOC);

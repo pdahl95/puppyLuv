@@ -22,8 +22,7 @@
     $question3 = $_GET['question3'];
     $question4 = $_GET['question4'];
     
-    // $query = "SELECT * FROM breed_info WHERE size = '';";
-    
+    // inner join query to get all info from breed_info and breed images 
     $query = "SELECT * FROM breed_info b INNER JOIN dogs d on b.breed = d.breed WHERE size = '$question4' AND activity = '$question1' AND family_oriented ='$question3' AND in_vs_out = '$question2';"; 
     
     $stmt= $conn->prepare($query); 
@@ -32,6 +31,7 @@
    
     echo json_encode($response);
     
+    // data retived from the query is saved in a session so we can access it in multiple php files
     $_SESSION['dogImages'] = $response;
     
     

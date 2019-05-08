@@ -217,7 +217,7 @@
     
     <!--<script type="text/javascript" src="../js/quizFunctions.js"></script>-->
     <script>
-        
+        /* global $ */ 
         $(document).ready(function(){
            $("#new_quiz_btn").on("click", function(){
                window.location = 'quiz.php';
