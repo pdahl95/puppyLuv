@@ -23,7 +23,8 @@ if (isset($_GET['submit'])) { //checks whether the form was submitted
     
     $stmt = $dbConn->prepare($sql);
     $stmt->execute($np);
-    echo "New Product was added!";
+    header('location: userDashboard.php');
+    // echo "New Product was added!";
     
 }
 
@@ -141,7 +142,7 @@ if (isset($_GET['submit'])) { //checks whether the form was submitted
                             
                 <form action="" method="GET">
                     
-                    Name: <input id="name" type="text" name="user_name" /> <br> 
+                    Username: <input id="name" type="text" name="user_name" /> <br> 
         
                     Age: <input id="q1" type="text" name="q1" /><br><br>
                     
