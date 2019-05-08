@@ -1,6 +1,51 @@
 <?php
+
+/* Attempt MySQL server connection. Assuming you are running MySQL
+server with default setting (user 'root' with no password) */
+include '../dbConnection.php';
+$dbConn = getDatabaseConnection("puppyLyv");
+$link = mysqli_connect("localhost", "root", "");
+ 
+// Check connection
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+ 
+// Escape user inputs for security
+$user_name = mysqli_real_escape_string($link, $_REQUEST['user_name']);
+$q1 = mysqli_real_escape_string($link, $_REQUEST['q1']);
+$q2 = mysqli_real_escape_string($link, $_REQUEST['q2']);
+$q3 = mysqli_real_escape_string($link, $_REQUEST['q3']);
+ 
+// Attempt insert query execution
+$sql = "INSERT INTO user_question (user_name, q1, q2, q3) VALUES ('$username', '$q1', '$q2', '$q3')";
+if(mysqli_query($link, $sql)){
+    echo "Records added successfully.";
+} else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+}
+ 
+// Close connection
+mysqli_close($link);
+
+
+
+	/* Password Matching Validation 
+	if($_POST['password'] != $_POST['confirm_password']){ 
+	$error_message = 'Passwords should be same<br>'; 
+	}
+	*/
+
+	/* Email Validation 
+	if(!isset($error_message)) {
+		if (!filter_var($_POST["userEmail"], FILTER_VALIDATE_EMAIL)) {
+		$error_message = "Invalid Email Address";
+		}
+	}
+    */
+
     //  inserts answers from newUserQuestions.php
-    session_start();
+    /*session_start();
     
     include '../dbConnection.php';
     $conn = getDatabaseConnection("puppyLyv");
@@ -19,7 +64,7 @@
        
       //if you dont have an exit it wont stop properly
       exit(0);
-}
+} */
  
 ?>
 
@@ -133,9 +178,9 @@
                         <!--<form method="GET" class="register-form" id="login-form">-->
                             
                             
-                <form action="" method="GET">
+                <form action="" method="post">
                     
-                    Name: <input id="name" type="text" name="username"/> <br> 
+                    Name: <input id="name" type="text" name="username" /> <br> 
         
                     Age: <input id="q1" type="text" name="q1" /><br><br>
                     
@@ -207,7 +252,7 @@
     
     <script>
         /* global $ */ 
-        $("#submit").on("click", function(){
+      /*  $("#submit").on("click", function(){
              $.ajax({
                    type: "GET",
                    url: "newUserQuestions.php",
@@ -225,7 +270,7 @@
                         alert("Fail!");
                    }
                    });
-        });
+        });  */
        
         
     </script>

@@ -78,3 +78,27 @@ Stack trace:
 #0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(16): PDOStatement->execute()
 #1 {main}
   thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 16
+[07-May-2019 00:10:46 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '', 'ca', 'moderate')' at line 1' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 16
+[07-May-2019 00:10:46 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '', 'ca', '')' at line 1' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 16
+[07-May-2019 00:31:24 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '', 'california', '')' at line 1' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 16
+[07-May-2019 00:31:24 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '', 'california', 'none')' at line 1' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 16
+[07-May-2019 01:34:46 UTC] PHP Warning:  mysqli_connect(): (HY000/1049): Unknown database 'demo' in /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php on line 5
+[07-May-2019 01:34:46 UTC] PHP Stack trace:
+[07-May-2019 01:34:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:0
+[07-May-2019 01:34:46 UTC] PHP   2. mysqli_connect() /home/ubuntu/workspace/puppyLuv/finalProject/php/newUserQuestions.php:5
