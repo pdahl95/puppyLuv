@@ -60,9 +60,16 @@ session_start();
             margin: 0;
             line-height: 1;
             padding: 5px;
+            text-transform: uppercase;
         }
         .matchRes h6{
             color: white;
+        }
+        #userD{
+            position: fixed;
+            top: 0;
+            right:0;
+            padding: 10px;
         }
         
     </style>
@@ -93,6 +100,7 @@ session_start();
                                     <!--<li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>-->
                                     <!--<li class="nav-item"><a class="nav-link" href="quiz.php">Quiz</a></li>-->
                                     <!--<li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>-->
+                                    <li id="userD" class="nav-item"><a class="nav-link" href="userDashboard.php">Dashboard</a></li>
                                 </ul>
                                 <div class="sing-up-button d-lg-none">
                                     <!--<a href="newUserLogin.php">Sign Up Free</a>-->
@@ -117,44 +125,24 @@ session_start();
         <br><br><br><br>
         <div class="matchRes">
             <br><br>
-            <h1 class="finalMATCH"> THIS IS YOUR FINAL MATCH! </h1>
-            <h6> You will be able view all your matched in the dashboard when logged in.</h6>
-           
         <?php
-        
-            //  echo json_encode($response);
              foreach($response as $ind => $value){
+                    $breed = $value['breed'];
                     $imgUrl = $value['img_url'];
+                    echo "<h1 class='finalMATCH'> $breed IS YOUR FINAL MATCH </h1>";
+                    echo "<h6> You will be able view all your matched in the dashboard when logged in.</h6>";
                     echo "<div class='clickableImages'><img id='$ind' src=$imgUrl></div>";
             }
                 
         ?>
-           
 
     </div>
-        
-        
-        
-
+  
     </section>
     <!-- ***** Wellcome Area End ***** -->
-        
-        
-        
-    
+ 
     <!-- ***** Footer Area Start ***** -->
-    <footer class="footer-social-icon text-center section_padding_70 clearfix">
-        <!-- footer logo -->
-        <div class="footer-text">
-            <h2>Puppy Luv</h2>
-        </div>
-        <!-- social icon-->
-        <div class="footer-social-icon">
-            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a href="#"><i class="active fa fa-twitter" aria-hidden="true"></i></a>
-            <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-        </div>
+    <footer class="">
 
     </footer>
     <!-- ***** Footer Area Start ***** -->

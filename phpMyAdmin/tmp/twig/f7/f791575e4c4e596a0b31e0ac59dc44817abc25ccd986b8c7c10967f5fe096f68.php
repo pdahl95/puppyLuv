@@ -84,6 +84,6 @@ class __TwigTemplate_27feb9a99ba23716300e4ead011723f7bd8f3b921ff00ae17c1b0c10226
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "display/results/table_navigation_button.twig", "/home/ubuntu/workspace/phpMyAdmin/templates/display/results/table_navigation_button.twig");
+        return new Twig_Source("", "display/results/table_navigation_button.twig", "/home/ubuntu/workspace/puppyLuv/phpMyAdmin/templates/display/results/table_navigation_button.twig");
     }
 }

@@ -293,12 +293,12 @@
                     "question4": selectedLabelHtml4.trim() 
                     },
                    success: function(data,status){
-                       alert("Success!");
+                    //   alert("Success!");
                        console.log(data);
                        window.location = 'results.php';
                    }, 
                    error: function (){
-                        alert("Fail!");
+                        // alert("Fail!");
                     }
                 }); 
             
