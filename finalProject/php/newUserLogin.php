@@ -136,11 +136,11 @@ if(!empty($_POST["register-user"])) {
                                     <?php } ?>
                                         <div class="form-group">
                                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                                <input type="text" class="demoInputBox" name="firstName" placeholder="First Name" value="<?php if(isset($_POST['firstName'])) echo $_POST['firstName']; ?>">
+                                                <input type="text" class="demoInputBox" name="firstName" placeholder="Name" value="<?php if(isset($_POST['firstName'])) echo $_POST['firstName']; ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                            <input type="text" class="demoInputBox" name="userEmail" placeholder="Email" value="<?php if(isset($_POST['userEmail'])) echo $_POST['userEmail']; ?>">
+                                            <input type="text" class="demoInputBox" name="userEmail" placeholder="Email/Username" value="<?php if(isset($_POST['userEmail'])) echo $_POST['userEmail']; ?>">
                                         </div>
                                         <div class="form-group">
                                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
