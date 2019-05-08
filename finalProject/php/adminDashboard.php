@@ -4,16 +4,30 @@ session_start();
 
 include '../dbConnection.php';
 $conn = getDatabaseConnection("puppyLyv");
-$numOfUser = "SELECT COUNT(*) FROM user_login";
-// print_r($numOfUser);
 
+// 1. Aggregation is to count how many user we have 
+$numOfUser = "SELECT COUNT(name) FROM user_login";
 $stmt = $conn->prepare($numOfUser); 
 $stmt->execute();
-$response = $stmt->fetchAll(PDO::FETCH_OBJ);
+$responseNumUser = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// echo json_encode($response); Number of user of this app 
+// 2. Aggregation is to get the average age for our users
+$userAvgAge = "SELECT AVG(q1) FROM user_question";
+$stmt = $conn->prepare($userAvgAge); 
+$stmt->execute();
+$responseAvgAge = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// 3. Aggregation is to count all the breeds we have 
+$numBreeds = "SELECT COUNT(*) FROM breed_info";
+$stmt = $conn->prepare($numBreeds); 
+$stmt->execute();
+$responseNumBreeds = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
+//  Number of user of this app 
+// echo json_encode($responseNumUser);
+// echo json_encode($responseAvgAge);
+// echo json_encode($responseNumBreeds);
 
 ?>
 
@@ -200,6 +214,22 @@ $response = $stmt->fetchAll(PDO::FETCH_OBJ);
         <div class="main">
             <a name="stats"></a>
             <div class="stats"> Statistics <br> 
+            <?php 
+                foreach($responseNumUser as $ind => $value){
+                    $numUser = $value['COUNT(name)'];
+                    echo "Number of active users " . $numUser . "<br>"; 
+                 }
+                 foreach($responseAvgAge as $ind => $value){
+                    $avgAge = $value['AVG(q1)'];
+                    echo "Average age of the user is " . $avgAge . "<br>"; 
+                 }
+                 foreach($responseNumBreeds as $ind => $value){
+                    $breeds = $value['COUNT(*)'];
+                    echo "Number of current breeds " . $breeds; 
+                 }
+            ?>
+            
+            
             <div class="stats_row">
               <div class="stats_column">
                 <div class="text">  <br> 
