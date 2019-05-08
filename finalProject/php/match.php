@@ -13,6 +13,7 @@ session_start();
     $stmt= $conn->prepare($sql); 
     $stmt->execute();
     $response = $stmt->fetchAll(PDO:: FETCH_ASSOC);
+    $_SESSION['dogImages'] = $response;
    
     // echo json_encode($response);
 
@@ -47,10 +48,15 @@ session_start();
     <link href="../css/responsive.css" rel="stylesheet">
     
     <style type="text/css">
+    body{
+        /*margin-bottom: 50px;*/
+    }
         .matchRes{
             width: 55%;
             margin: auto;
            text-align: center;
+           margin-bottom: 50px;
+           
         }
         .finalMATCH{
             text-align: center;
@@ -70,6 +76,19 @@ session_start();
             top: 0;
             right:0;
             padding: 10px;
+        }
+        .dogInfoMatch p{
+            /*float: left;*/
+            color: black;
+        }
+        .dogInfoMatch{
+            padding: 50px;
+            /*margin: auto;*/
+            text-align: center;
+            /*margin-top: -500px;*/
+        }
+        matchContent{
+            /*height: 1500px;*/
         }
         
     </style>
@@ -120,7 +139,7 @@ session_start();
     </header>
     <!-- ***** Header Area End ***** -->
     <!-- ***** Wellcome Area Start ***** -->
-    <section class="wellcome_area clearfix" id="home">
+    <section class="wellcome_area clearfix" id="matchContent">
         
         <br><br><br><br>
         <div class="matchRes">
@@ -133,7 +152,8 @@ session_start();
                     echo "<h6> You will be able view all your matched in the dashboard when logged in.</h6>";
                     echo "<div class='clickableImages'><img id='$ind' src=$imgUrl></div>";
             }
-                
+            
+        
         ?>
 
     </div>
@@ -143,7 +163,33 @@ session_start();
  
     <!-- ***** Footer Area Start ***** -->
     <footer class="">
-
+    <?php
+        $dogInfoByBreed = "SELECT * FROM breed_info WHERE breed = '$breed'";
+            $stmt= $conn->prepare($dogInfoByBreed); 
+            $stmt->execute();
+            $dogInfo = $stmt->fetchAll(PDO:: FETCH_ASSOC);
+           
+            // echo json_encode($dogInfo);
+             foreach($dogInfo as $ind => $value){
+                    $life = $value['life_expectancy'];
+                    $weight = $value['weight'];
+                    $height = $value['height'];
+                    $size = $value['size'];
+                    $activity = $value['activity'];
+                    $family = $value['family_oriented'];
+                    $indoorVSoutdoor = $value['in_vs_out'];
+                    
+                    echo "<div class='dogInfoMatch'>
+                        <p> Life Expectancy is $life <br> </p> 
+                        <p> Weight:  $weight<br> </p> 
+                        <p> Height: $height <br> </p> 
+                        <p> Activity level is $activity <br> </p> 
+                        <p> Family Oritented: $family </p>
+                        <p> Likes to be $indoorVSoutdoor </p>
+                    </div>"; 
+            }
+    
+    ?>
     </footer>
     <!-- ***** Footer Area Start ***** -->
 

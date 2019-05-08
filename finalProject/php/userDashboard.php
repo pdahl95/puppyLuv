@@ -1,3 +1,27 @@
+ <?php 
+      session_start();
+      
+      if (!isset($_SESSION['user'])){
+        header('Location: login.php');
+      }
+      
+      include '../dbConnection.php';
+      $conn = getDatabaseConnection("puppyLyv");
+       
+      $user = $_SESSION['user'];
+        $query = "SELECT * FROM breed_match WHERE user_id = '$user'";
+        $stmt= $conn->prepare($query); 
+        $stmt->execute();
+        $response = $stmt->fetchAll(PDO:: FETCH_ASSOC);
+       
+        // echo json_encode($response);
+        
+        $_SESSION['dogImages'] = $response;
+        
+        
+        // exit(0);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,6 +85,12 @@
         #new_quiz_btn{
             width:250px;
         }
+        .clickableImages{
+            width: 100px;
+            height:100px;
+            padding: 10px;
+        }
+        
     
     </style>
 
@@ -119,7 +149,25 @@
             
               <div class="left" id="matches" >
                 <h2> Here are your matches </h2> 
-                <p></p>
+                <?php
+                
+                   if(isset($_SESSION['dogImages'])){
+                      $response = $_SESSION['dogImages']; 
+                       foreach($response as $ind => $value){
+                                // echo "$data['image_url']";
+                                $imgUrl = $value['img_url'];
+                                $breed = $value['breed'];
+                                // echo $imgUrl;
+                                echo "<div class='clickableImages'>
+                                <img id='$ind' src=$imgUrl>
+                                <p> $breed </p>
+                                </div>";
+                                // echo "<div class='clickableImages'><img id='$ind' src='pngheartlike.png'></div>";
+                        }
+                  }
+                
+                ?>
+            
               </div>
             
               <div class="right">
