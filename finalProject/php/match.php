@@ -9,11 +9,12 @@ session_start();
   include '../dbConnection.php';
   $conn = getDatabaseConnection("puppyLyv");
   
-    $sql = "select * from breed_match ORDER BY user_id DESC LIMIT 1";
+    $sql = "SELECT * FROM breed_match ORDER BY img_url DESC LIMIT 1";
     $stmt= $conn->prepare($sql); 
     $stmt->execute();
     $response = $stmt->fetchAll(PDO:: FETCH_ASSOC);
-    $_SESSION['dogImages'] = $response;
+    $_SESSION['finalDog'] - $reponse;
+    // echo $response;
    
     // echo json_encode($response);
 
@@ -146,6 +147,7 @@ session_start();
             <br><br>
         <?php
              foreach($response as $ind => $value){
+                 echo json_encode($response);
                     $breed = $value['breed'];
                     $imgUrl = $value['img_url'];
                     echo "<h1 class='finalMATCH'> $breed IS YOUR FINAL MATCH </h1>";

@@ -139,11 +139,15 @@ session_start();
            <?php
              if(isset($_SESSION['dogImages'])){
                   $expectedQuizResults = $_SESSION['dogImages']; 
+                  // All the dog gotten from the query (results from the quiz)
+                //   echo json_encode($expectedQuizResults);
                    foreach($expectedQuizResults as $ind => $value){
-                            // echo "$data['image_url']";
+                            // echo json_encode($value['image_url']);
                             $imgUrl = $value['image_url'];
                             echo "<div class='clickableImages'><img id='$ind' src=$imgUrl></div>";
-                            // echo "<div class='clickableImages'><img id='$ind' src='pngheartlike.png'></div>";
+                            // echo json_encode($ind);
+                            $_SESSION['finalDog'] = $ind;
+                            
                     }
               }
            

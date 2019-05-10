@@ -102,7 +102,7 @@
         <div class="location">
             <div> Find A Dog Near You! </div>
         	<label for="zip">Zip: </label>
-        	<input type="text" name="zip" id="zip">
+        	<input type="text" name="zip" id="zip"><input type="text" name="breed" id="zip">
         	<button id="submitBtn"> Search </button>
         	<div id='animalTable'>
         	    
@@ -145,6 +145,7 @@
 		
 		$("#submitBtn").on("click", function(){
 			var zipValue = $('[name=zip]').val();
+			var breed = $('[name=breed]').val();
 			// alert(zipValue);
 			$.ajax({
 				type:'POST', 
@@ -166,12 +167,13 @@
 						},
 						data:{
 							'type': 'dog',
-							'location' : zipValue
+							'location' : zipValue, 
+							'breed' : breed
 						},
 						success: function(data){
 						    $('#animalTable').html("<p>Linkes to adpoption locations:</p>");
 							$.each( data.animals, function( index, animal ) {
-                                    $('#animalTable').append("<a target='_blank' href='"+animal.url+"'>"+ "Location" + ":" + index + "</a>").css("color", 'white');
+                                    $('#animalTable').append("<a target='_blank' href='"+animal.url+"'>"+ breed  + "</a>").css("color", 'white');
                                     $('#animalTable').append("<br>");
                             });
 							    
